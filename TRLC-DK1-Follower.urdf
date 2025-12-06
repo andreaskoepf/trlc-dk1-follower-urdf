@@ -68,7 +68,7 @@
     </collision>
   </link>
   <joint
-    name="Base_Joint"
+    name="joint1"
     type="revolute">
     <origin
       xyz="0 0 0.06"
@@ -82,8 +82,8 @@
     <limit
       lower="-2.0943951023931953"
       upper="2.0943951023931953"
-      effort="0"
-      velocity="0" />
+      effort="100"
+      velocity="3" />
   </joint>
   <link
     name="Link1">
@@ -119,7 +119,7 @@
     </collision>
   </link>
   <joint
-    name="Joint_2"
+    name="joint2"
     type="revolute">
     <origin
       xyz="0 0.02 0.0385"
@@ -133,8 +133,8 @@
     <limit
       lower="-3.141592653589793"
       upper="0"
-      effort="0"
-      velocity="0" />
+      effort="100"
+      velocity="3" />
   </joint>
   <link
     name="Link_2">
@@ -170,7 +170,7 @@
     </collision>
   </link>
   <joint
-    name="Joint_3"
+    name="joint3"
     type="revolute">
     <origin
       xyz="0 -0.264 0"
@@ -184,8 +184,8 @@
     <limit
       lower="0"
       upper="4.71238898038469"
-      effort="0"
-      velocity="0" />
+      effort="100"
+      velocity="3" />
   </joint>
   <link
     name="link4-5">
@@ -220,7 +220,7 @@
     </collision>
   </link>
   <joint
-    name="Joint_4"
+    name="joint4"
     type="revolute">
     <origin
       xyz="0 0.244004 0.059971"
@@ -234,8 +234,8 @@
     <limit
       lower="-1.5707963267948966"
       upper="1.5707963267948966"
-      effort="0"
-      velocity="0" />
+      effort="20"
+      velocity="3" />
   </joint>
   <link
     name="link5-6">
@@ -270,7 +270,7 @@
     </collision>
   </link>
   <joint
-    name="Joint_5"
+    name="joint5"
     type="revolute">
     <origin
       xyz="0 0.061993 0.038"
@@ -284,8 +284,8 @@
     <limit
       lower="-1.57"
       upper="1.5707963267948966"
-      effort="0"
-      velocity="0" />
+      effort="20"
+      velocity="3" />
   </joint>
   <link
     name="Link6-7">
@@ -320,7 +320,7 @@
     </collision>
   </link>
   <joint
-    name="Gripper_Rot"
+    name="joint6"
     type="revolute">
     <origin
       xyz="0.0 0.032 -0.0375"
@@ -334,8 +334,8 @@
     <limit
       lower="-3.141592653589793"
       upper="3.141592653589793"
-      effort="0"
-      velocity="0" />
+      effort="20"
+      velocity="3" />
   </joint>
   <link
     name="finger_left">
@@ -373,7 +373,7 @@
     name="gripper_left"
     type="prismatic">
     <origin
-      xyz="0 0 0"
+      xyz="-0.04 0 0"
       rpy="0 0 0" />
     <parent
       link="Link6-7" />
@@ -381,10 +381,10 @@
       link="finger_left" />
     <axis xyz="-1 0 0" />
     <limit
-      lower="0.0"
-      upper="0.04"
-      effort="0"
-      velocity="0" />
+      lower="-0.045"
+      upper="0.0"
+      effort="20"
+      velocity="0.2" />
   </joint>
   <link
     name="finger_right">
@@ -421,7 +421,7 @@
     name="gripper_right"
     type="prismatic">
     <origin
-      xyz="0 0 0"
+      xyz="0.04 0 0"
       rpy="0 0 0" />
     <parent
       link="Link6-7" />
@@ -430,10 +430,10 @@
     <axis
       xyz="1 0 0" />
     <limit
-      lower="0.0"
-      upper="0.04"
-      effort="0"
-      velocity="0" />
+      lower="-0.045"
+      upper="0.0"
+      effort="20"
+      velocity="0.2" />
     <mimic joint="gripper_left" multiplier="1" offset="0" />
   </joint>
 </robot>
