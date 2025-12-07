@@ -16,7 +16,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/base_link.stl" />
+          filename="meshes/base_link.dae" />
       </geometry>
       <material
         name="">
@@ -49,7 +49,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link1-2.stl" />
+          filename="meshes/link1-2.dae" />
       </geometry>
       <material
         name="">
@@ -100,7 +100,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Link1.stl" />
+          filename="meshes/link1.dae" />
       </geometry>
       <material
         name="">
