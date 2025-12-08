@@ -16,7 +16,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/base_link.dae" />
+          filename="meshes/visual/base_link.dae" />
       </geometry>
       <material
         name="">
@@ -30,7 +30,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/base_link.stl" />
+          filename="meshes/collision/base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -49,7 +49,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link1-2.dae" />
+          filename="meshes/visual/link1-2.dae" />
       </geometry>
       <material
         name="">
@@ -63,7 +63,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link1-2.stl" />
+          filename="meshes/collision/link1-2.stl" />
       </geometry>
     </collision>
   </link>
@@ -86,7 +86,7 @@
       velocity="3" />
   </joint>
   <link
-    name="Link1">
+    name="link1">
     <inertial>
       <origin
         xyz="0 0 0"
@@ -100,7 +100,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link1.dae" />
+          filename="meshes/visual/link1.dae" />
       </geometry>
       <material
         name="">
@@ -113,7 +113,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />n <geometry>
         <mesh
-          filename="meshes/Link1.stl" />
+          filename="meshes/collision/link1.stl" />
       </geometry>
     </collision>
   </link>
@@ -126,7 +126,7 @@
     <parent
       link="link1-2" />
     <child
-      link="Link1" />
+      link="link1" />
     <axis
       xyz="1 0 0" />
     <limit
@@ -136,7 +136,7 @@
       velocity="3" />
   </joint>
   <link
-    name="Link_2">
+    name="link2">
     <inertial>
       <origin
         xyz="0 0 0"
@@ -150,7 +150,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link2.dae" />
+          filename="meshes/visual/link2.dae" />
       </geometry>
       <material
         name="">
@@ -164,7 +164,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Link_2.stl" />
+          filename="meshes/collision/link2.stl" />
       </geometry>
     </collision>
   </link>
@@ -175,9 +175,9 @@
       xyz="0 -0.264 0"
       rpy="0 0 0" />
     <parent
-      link="Link1" />
+      link="link1" />
     <child
-      link="Link_2" />
+      link="link2" />
     <axis
       xyz="1 0 0" />
     <limit
@@ -201,7 +201,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link4-5.dae" />
+          filename="meshes/visual/link4-5.dae" />
       </geometry>
       <material name="">
         <color
@@ -214,7 +214,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link4-5.stl" />
+          filename="meshes/collision/link4-5.stl" />
       </geometry>
     </collision>
   </link>
@@ -225,7 +225,7 @@
       xyz="0 0.244004 0.059971"
       rpy="0 0 0" />
     <parent
-      link="Link_2" />
+      link="link2" />
     <child
       link="link4-5" />
     <axis
@@ -251,7 +251,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link5-6.dae" />
+          filename="meshes/visual/link5-6.dae" />
       </geometry>
       <material name="">
         <color
@@ -264,7 +264,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link5-6.stl" />
+          filename="meshes/collision/link5-6.stl" />
       </geometry>
     </collision>
   </link>
@@ -287,7 +287,7 @@
       velocity="3" />
   </joint>
   <link
-    name="Link6-7">
+    name="link6-7">
     <inertial>
       <origin
         xyz="0 0 0"
@@ -301,7 +301,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link6-7.dae" />
+          filename="meshes/visual/link6-7.dae" />
       </geometry>
       <material name="">
         <color
@@ -314,7 +314,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Link6-7.stl" />
+          filename="meshes/collision/link6-7.stl" />
       </geometry>
     </collision>
   </link>
@@ -327,7 +327,7 @@
     <parent
       link="link5-6" />
     <child
-      link="Link6-7" />
+      link="link6-7" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -351,7 +351,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_left.dae" />
+          filename="meshes/visual/finger_left.dae" />
       </geometry>
       <material name="">
         <color
@@ -364,7 +364,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_left.stl" />
+          filename="meshes/collision/finger_left.stl" />
       </geometry>
     </collision>
   </link>
@@ -375,7 +375,7 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="Link6-7" />
+      link="link6-7" />
     <child
       link="finger_left" />
     <axis xyz="-1 0 0" />
@@ -400,7 +400,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_right.dae" />
+          filename="meshes/visual/finger_right.dae" />
       </geometry>
       <material name="">
         <color
@@ -413,7 +413,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_right.stl" />
+          filename="meshes/collision/finger_right.stl" />
       </geometry>
     </collision>
   </link>
@@ -424,7 +424,7 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="Link6-7" />
+      link="link6-7" />
     <child
       link="finger_right" />
     <axis
@@ -442,7 +442,7 @@
       xyz="0 0.158 0"
       rpy="-1.5707963267948966 0 0" />
     <parent
-      link="Link6-7" />
+      link="link6-7" />
     <child
       link="tool0" />
   </joint>
