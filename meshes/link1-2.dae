@@ -5,8 +5,8 @@
       <author>Assimp</author>
       <authoring_tool>Khronos glTF Blender I/O v5.0.21</authoring_tool>
     </contributor>
-    <created>2025-12-07T23:07:53</created>
-    <modified>2025-12-07T23:07:53</modified>
+    <created>2025-12-08T00:15:11</created>
+    <modified>2025-12-08T00:15:11</modified>
     <unit name="meter" meter="1" />
     <up_axis>Y_UP</up_axis>
   </asset>

@@ -111,7 +111,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 0" />n
       <geometry>
         <mesh
           filename="meshes/Link1.stl" />
@@ -151,7 +151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Link_2.stl" />
+          filename="meshes/link2.dae" />
       </geometry>
       <material
         name="">
@@ -202,7 +202,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link4-5.stl" />
+          filename="meshes/link4-5.dae" />
       </geometry>
       <material name="">
         <color
