@@ -111,8 +111,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />n
-      <geometry>
+        rpy="0 0 0" />n <geometry>
         <mesh
           filename="meshes/Link1.stl" />
       </geometry>
@@ -435,5 +434,15 @@
       effort="20"
       velocity="0.2" />
     <mimic joint="gripper_left" multiplier="1" offset="0" />
+  </joint>
+  <link name="tool0" />
+  <joint name="gripper_tool0" type="fixed">
+    <origin
+      xyz="0 0.158 0"
+      rpy="-1.5707963267948966 0 0" />
+    <parent
+      link="Link6-7" />
+    <child
+      link="tool0" />
   </joint>
 </robot>
