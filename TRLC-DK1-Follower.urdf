@@ -252,7 +252,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/link5-6.stl" />
+          filename="meshes/link5-6.dae" />
       </geometry>
       <material name="">
         <color
@@ -273,7 +273,7 @@
     name="joint5"
     type="revolute">
     <origin
-      xyz="0 0.061993 0.0375"
+      xyz="0 0.061868 0.0425"
       rpy="0 0 0" />
     <parent
       link="link4-5" />
@@ -302,7 +302,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Link6-7.stl" />
+          filename="meshes/link6-7.dae" />
       </geometry>
       <material name="">
         <color
@@ -352,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_left.stl" />
+          filename="meshes/finger_left.dae" />
       </geometry>
       <material name="">
         <color
@@ -373,7 +373,7 @@
     name="gripper_left"
     type="prismatic">
     <origin
-      xyz="-0.04 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="Link6-7" />
@@ -400,7 +400,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_right.stl" />
+          filename="meshes/finger_right.dae" />
       </geometry>
       <material name="">
         <color
@@ -421,7 +421,7 @@
     name="gripper_right"
     type="prismatic">
     <origin
-      xyz="0.04 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="Link6-7" />
