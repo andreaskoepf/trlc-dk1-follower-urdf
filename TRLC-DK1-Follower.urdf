@@ -8,7 +8,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.02782" />
+        value="0.21" />
     </inertial>
     <visual>
       <origin
@@ -41,7 +41,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.024532" />
+        value="0.09" />
     </inertial>
     <visual>
       <origin
@@ -92,7 +92,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.537601776973517" />
+        value="0.55" />
     </inertial>
     <visual>
       <origin
@@ -142,7 +142,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.299922094541001" />
+        value="0.54467" />
     </inertial>
     <visual>
       <origin
@@ -193,7 +193,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.0142938416889126" />
+        value="0.361" />
     </inertial>
     <visual>
       <origin
@@ -243,7 +243,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.11909711022403" />
+        value="0.35879" />
     </inertial>
     <visual>
       <origin
@@ -293,7 +293,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.289722572316062" />
+        value="0.45775" />
     </inertial>
     <visual>
       <origin
@@ -343,7 +343,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.0745959905268717" />
+        value="0.037299" />
     </inertial>
     <visual>
       <origin
@@ -391,7 +391,8 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <mass value="0.0745959905268717" />
+      <mass
+        value="0.037299" />
     </inertial>
     <visual>
       <origin
