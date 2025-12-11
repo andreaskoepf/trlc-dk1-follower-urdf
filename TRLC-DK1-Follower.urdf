@@ -135,7 +135,7 @@
   <link
     name="link3-4">
     <inertial>
-     <origin xyz="0.18531 0.00068376 0.051638" rpy="0 0 0" />
+      <origin xyz="0.18531 0.00068376 0.051638" rpy="0 0 0" />
       <inertia ixx="0.00036" ixy="-0.00003" ixz="0.00039" iyy="0.00423" iyz="0.00001" izz="0.00420" />
       <mass
         value="0.54467" />
@@ -437,5 +437,41 @@
       link="link6-7" />
     <child
       link="tool0" />
+  </joint>
+  <!-- Wrist camera mount, tilted down ~20° -->
+  <link name="camera_base">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963267948966 0" />
+      <geometry>
+        <box size="0.03 0.025 0.015" />
+      </geometry>
+      <material name="camera_black">
+        <color rgba="0.1 1.0 0.1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="hand_to_camera_mount" type="fixed">
+    <parent link="link6-7" />
+    <child link="camera_base" />
+    <origin xyz="0.035 0 0.0675" rpy="0 0.3491 0" />
+  </joint>
+
+  <!-- Wrist camera (sensor frame) -->
+  <link name="camera">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963267948966 0" />
+      <geometry>
+        <cylinder radius="0.008" length="0.015" />
+      </geometry>
+      <material name="camera_lens">
+        <color rgba="1.0 0.2 0.3 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="camera_base" />
+    <child link="camera" />
+    <!-- Camera with Z-axis pointing upward, X-axis as optical axis -->
+    <origin xyz="0.01 0.0 0.0" rpy="0 0 0" />
   </joint>
 </robot>
