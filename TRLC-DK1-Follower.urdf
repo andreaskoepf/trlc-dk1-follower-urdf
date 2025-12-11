@@ -122,7 +122,7 @@
       xyz="0 -1 0" />
     <limit
       lower="-3.141592653589793"
-      upper="0.001"
+      upper="0.01"
       effort="100"
       velocity="3" />
   </joint>
@@ -166,7 +166,7 @@
     <axis
       xyz="0 -1 0" />
     <limit
-      lower="-0.001"
+      lower="-0.01"
       upper="4.71238898038469"
       effort="100"
       velocity="3" />
