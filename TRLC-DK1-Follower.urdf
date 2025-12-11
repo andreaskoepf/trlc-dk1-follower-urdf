@@ -15,7 +15,7 @@
       <origin xyz="0 0 0.027324" rpy="0 0 0" />
       <mass
         value="0.21" />
-      <inertia ixx="0.00017" ixy="0.00000" ixz="0.00000" iyy="0.00017" iyz="0.00000" izz="0.00016" />
+      <inertia ixx="0.00017" ixy="0" ixz="0" iyy="0.00017" iyz="0" izz="0.00016" />
     </inertial>
     <visual>
       <origin
@@ -25,11 +25,6 @@
         <mesh
           filename="meshes/visual/base_link.glb" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.95 0.95 0.95 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -47,7 +42,7 @@
       <origin xyz="0.0054231 0 0.017086" rpy="0 0 0" />
       <mass
         value="0.09" />
-      <inertia ixx="0.00008" ixy="0.00000" ixz="0.00001" iyy="0.00003" iyz="0.00000" izz="0.00008" />
+      <inertia ixx="0.00008" ixy="0" ixz="0.00001" iyy="0.00003" iyz="0" izz="0.00008" />
     </inertial>
     <visual>
       <origin
@@ -57,11 +52,6 @@
         <mesh
           filename="meshes/visual/link1-2.glb" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.95 0.95 0.95 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -95,7 +85,7 @@
     name="link2-3">
     <inertial>
       <origin xyz="0.132 0 0" rpy="0 0 0" />
-      <inertia ixx="0.00051" ixy="0.00001" ixz="-0.00004" iyy="0.01599" iyz="0.00000" izz="0.01605" />
+      <inertia ixx="0.00051" ixy="0.00001" ixz="-0.00004" iyy="0.01599" iyz="0" izz="0.01605" />
       <mass
         value="1.0" />
     </inertial>
@@ -107,11 +97,6 @@
         <mesh
           filename="meshes/visual/link2-3.glb" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.75 0.75 0.75 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -127,7 +112,7 @@
     name="joint2"
     type="revolute">
     <origin
-      xyz="0.02 0 0.0385"
+      xyz="0.02 0.0 0.0385"
       rpy="0 0 0" />
     <parent
       link="link1-2" />
@@ -157,11 +142,6 @@
         <mesh
           filename="meshes/visual/link3-4.glb" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.75 0.75 0.75 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -207,10 +187,6 @@
         <mesh
           filename="meshes/visual/link4-5.glb" />
       </geometry>
-      <material name="">
-        <color
-          rgba="0.95 0.95 0.95 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -244,7 +220,7 @@
     name="link5-6">
     <inertial>
       <origin xyz="0.003612 0 0" rpy="0 0 0" />
-      <inertia ixx="0.00083" ixy="0" ixz="0" iyy="0.00082" iyz="0" izz="0.00026" />
+      <inertia ixx="0.00083" ixy="0" ixz="0.00007" iyy="0.00082" iyz="0" izz="0.00026" />
       <mass
         value="0.35879" />
     </inertial>
@@ -256,10 +232,6 @@
         <mesh
           filename="meshes/visual/link5-6.glb" />
       </geometry>
-      <material name="">
-        <color
-          rgba="0.95 0.95 0.95 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -293,7 +265,7 @@
     name="link6-7">
     <inertial>
       <origin xyz="0.041697 2.4368E-05 0.00014464" rpy="0 0 0" />
-      <inertia ixx="0.00038" ixy="0" ixz="0" iyy="0.00028" iyz="0" izz="0.0005" />
+      <inertia ixx="0.00038" ixy="0" ixz="0" iyy="0.00028" iyz="0" izz="0.00050" />
       <mass
         value="0.45775" />
     </inertial>
@@ -305,10 +277,6 @@
         <mesh
           filename="meshes/visual/link6-7.glb" />
       </geometry>
-      <material name="">
-        <color
-          rgba="0.25 0.25 0.25 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -354,11 +322,6 @@
         <mesh
           filename="meshes/visual/finger_left.glb" />
       </geometry>
-      <material
-        name="black">
-        <color
-          rgba="0 0 0 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -403,11 +366,6 @@
         <mesh
           filename="meshes/visual/finger_right.glb" />
       </geometry>
-      <material
-        name="black">
-        <color
-          rgba="0 0 0 1" />
-      </material>
     </visual>
     <collision>
       <origin
@@ -447,40 +405,16 @@
     <child
       link="tool0" />
   </joint>
-  <!-- Wrist camera mount, tilted down ~20° -->
-  <link name="camera_base">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 1.5707963267948966 0" />
-      <geometry>
-        <box size="0.03 0.025 0.015" />
-      </geometry>
-      <material name="camera_black">
-        <color rgba="0.1 1.0 0.1 1" />
-      </material>
-    </visual>
-  </link>
-  <joint name="hand_to_camera_mount" type="fixed">
-    <parent link="link6-7" />
-    <child link="camera_base" />
-    <origin xyz="0.035 0 0.0675" rpy="0 0.3491 0" />
-  </joint>
 
   <!-- Wrist camera (sensor frame) -->
-  <link name="camera">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 1.5707963267948966 0" />
-      <geometry>
-        <cylinder radius="0.008" length="0.015" />
-      </geometry>
-      <material name="camera_lens">
-        <color rgba="1.0 0.2 0.3 1" />
-      </material>
-    </visual>
-  </link>
+  <link name="camera" />
+
+  <!-- Wrist camera mount, tilted down ~20° -->
   <joint name="camera_joint" type="fixed">
-    <parent link="camera_base" />
+    <parent link="link6-7" />
     <child link="camera" />
+
     <!-- Camera with Z-axis pointing upward, X-axis as optical axis -->
-    <origin xyz="0.01 0 0" rpy="0 0 0" />
+    <origin xyz="0.0471 0 0.063314" rpy="0 0.2618 0" />
   </joint>
 </robot>

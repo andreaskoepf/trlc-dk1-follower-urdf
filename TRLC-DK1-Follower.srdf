@@ -11,7 +11,7 @@ the joints and the links that are referenced are defined.
     <joint name="joint4" />
     <joint name="joint5" />
     <joint name="joint6" />
-    <chain base_link="joint1" tip_link="joint6" />
+    <chain base_link="base_link" tip_link="link6-7" />
   </group>
   <group name="follower_gripper">
     <joint name="gripper_left" />
@@ -43,13 +43,16 @@ the joints and the links that are referenced are defined.
 
   <!-- These links are directly connected by a joint in the URDF. -->
   <disable_collisions link1="base_link" link2="link1-2" reason="Adjacent" />
-  <disable_collisions link1="link1-2" link2="link1" reason="Adjacent" />
-  <disable_collisions link1="link1" link2="link2" reason="Adjacent" />
-  <disable_collisions link1="link2" link2="link4-5" reason="Adjacent" />
+  <disable_collisions link1="link1-2" link2="link2-3" reason="Adjacent" />
+  <disable_collisions link1="link2-3" link2="link3-4" reason="Adjacent" />
+  <disable_collisions link1="link3-4" link2="link4-5" reason="Adjacent" />
   <disable_collisions link1="link4-5" link2="link5-6" reason="Adjacent" />
   <disable_collisions link1="link5-6" link2="link6-7" reason="Adjacent" />
   <disable_collisions link1="link6-7" link2="finger_left" reason="Adjacent" />
   <disable_collisions link1="link6-7" link2="finger_right" reason="Adjacent" />
+  <disable_collisions link1="link6-7" link2="tool0" reason="Adjacent" />
+  <disable_collisions link1="link6-7" link2="camera_base" reason="Adjacent" />
+  <disable_collisions link1="camera_base" link2="camera" reason="Adjacent" />
 
   <!-- These link pairs will never collide due to the robot's kinematic structure. -->
   <disable_collisions link1="link5-6" link2="finger_left" reason="Never" />
@@ -57,6 +60,7 @@ the joints and the links that are referenced are defined.
   <disable_collisions link1="link4-5" link2="finger_left" reason="Never" />
   <disable_collisions link1="link4-5" link2="finger_right" reason="Never" />
   <disable_collisions link1="link4-5" link2="link6-7" reason="Never" />
-  <disable_collisions link1="link2" link2="link5-6" reason="Never" />
+  <disable_collisions link1="link3-4" link2="link5-6" reason="Never" />
+  <disable_collisions link1="finger_left" link2="finger_right" reason="Never" />
 
 </robot>
