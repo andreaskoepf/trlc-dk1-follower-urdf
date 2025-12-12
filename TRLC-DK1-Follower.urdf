@@ -13,7 +13,7 @@
   Joint motors:
     - joint{1,2,3}: DAMIAO Motor DM4340, 52.5 rpm, 5.49 rad/s
     - joint{4,5,6}: DAMIAO Motor DM4310, 200 rpm, 20.94 rad/s
-    - gripper DAMIAO Motor DM4310, 0.00875m spur gear radius, 0.183225 m/s
+    - gripper DAMIAO Motor DM4310, 0.00875m spur gear radius, 0.183225 m/s, 114N
   -->
   <link
     name="base_link">
