@@ -65,7 +65,7 @@ The TRLC DK-1 is an open-source robotic arm designed for robot learning and AI r
 - Separate visual (GLB) and collision (STL) meshes
 - Parallel gripper with left/right finger joints
 - Tool center point (TCP) frame at `tool0`
-- Wrist camera mount with 20° downward tilt
+- Wrist camera mount with 15° downward tilt
 - SRDF file with joint groups, named poses (home, open, close), and self-collision exclusions
 - Simplified collision sphere model (`collision_trlc-dk1.yml`) for use with simulation frameworks like [RoboTwin 2.0](https://robotwin-platform.github.io/)
 

@@ -415,7 +415,7 @@
   <!-- Wrist camera (sensor frame) -->
   <link name="camera" />
 
-  <!-- Wrist camera mount, tilted down ~20° -->
+  <!-- Wrist camera mount, tilted down 15° -->
   <joint name="camera_joint" type="fixed">
     <parent link="link6-7" />
     <child link="camera" />
