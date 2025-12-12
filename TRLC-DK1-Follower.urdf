@@ -2,12 +2,18 @@
 <robot
   name="TRLC-DK1-Follower">
   <!--
-    joint1: -2.094 to 2.094 (±120°)
-  - joint2: -3.14 to 0
-  - joint3: 0 to 4.71
-  - joint4: -1.57 to 1.57 (±90°)
-  - joint5: -1.57 to 1.57 (±90°)
-  - joint6: -3.14 to 3.14 (±180°)
+  Joint limits:
+    - joint1: -2.094 to 2.094 (±120°)
+    - joint2: -3.14 to 0
+    - joint3: 0 to 4.71  (DM4340)
+    - joint4: -1.57 to 1.57 (±90°))
+    - joint5: -1.57 to 1.57 (±90°)
+    - joint6: -3.14 to 3.14 (±180°)
+  
+  Joint motors:
+    - joint{1,2,3}: DAMIAO Motor DM4340, 52.5 rpm, 5.49 rad/s
+    - joint{4,5,6}: DAMIAO Motor DM4310, 200 rpm, 20.94 rad/s
+    - gripper DAMIAO Motor DM4310, 0.00875m spur gear radius, 0.183225 m/s
   -->
   <link
     name="base_link">
@@ -79,7 +85,7 @@
       lower="-2.0943951023931953"
       upper="2.0943951023931953"
       effort="100"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="link2-3">
@@ -124,7 +130,7 @@
       lower="-3.141592653589793"
       upper="0.01"
       effort="100"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="link3-4">
@@ -169,7 +175,7 @@
       lower="-0.01"
       upper="4.71238898038469"
       effort="100"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="link4-5">
@@ -214,7 +220,7 @@
       lower="-1.5707963267948966"
       upper="1.5707963267948966"
       effort="20"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="link5-6">
@@ -259,7 +265,7 @@
       lower="-1.5707963267948966"
       upper="1.5707963267948966"
       effort="20"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="link6-7">
@@ -304,7 +310,7 @@
       lower="-3.141592653589793"
       upper="3.141592653589793"
       effort="20"
-      velocity="3" />
+      velocity="5.4" />
   </joint>
   <link
     name="finger_left">
@@ -348,7 +354,7 @@
       lower="-0.045"
       upper="0.001"
       effort="20"
-      velocity="0.2" />
+      velocity="0.18" />
   </joint>
   <link
     name="finger_right">
@@ -393,7 +399,7 @@
       lower="-0.045"
       upper="0.001"
       effort="20"
-      velocity="0.2" />
+      velocity="0.18" />
   </joint>
   <link name="tool0" />
   <joint name="gripper_tool0" type="fixed">
