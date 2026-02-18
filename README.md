@@ -24,7 +24,7 @@ The TRLC DK-1 is an open-source robotic arm designed for robot learning and AI r
 | Joint | Motor | Max Velocity | Range |
 |-------|-------|--------------|-------|
 | Joint 1 | DAMIAO DM4340 | 5.4 rad/s | ±120° |
-| Joint 2 | DAMIAO DM4340 | 5.4 rad/s | -180° to 0° |
+| Joint 2 | DAMIAO DM4340 | 5.4 rad/s | 0° to 180° |
 | Joint 3 | DAMIAO DM4340 | 5.4 rad/s | 0° to 270° |
 | Joint 4 | DAMIAO DM4310 | 5.4 rad/s | ±90° |
 | Joint 5 | DAMIAO DM4310 | 5.4 rad/s | ±90° |
