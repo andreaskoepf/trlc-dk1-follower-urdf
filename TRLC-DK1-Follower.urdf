@@ -19,7 +19,7 @@
     name="base_link">
     <inertial>
       <origin xyz="0 0 0.027324" rpy="0 0 0" />
-      <mass value="0.4455" />
+      <mass value="0.5111" />
       <inertia ixx="0.00017" ixy="0" ixz="0" iyy="0.00017" iyz="0" izz="0.00016" />
     </inertial>
     <visual>
@@ -45,7 +45,7 @@
     name="link1-2">
     <inertial>
       <origin xyz="0.0054231 0 0.017086" rpy="0 0 0" />
-      <mass value="0.0886" />
+      <mass value="0.5965" />
       <inertia ixx="0.00008" ixy="0" ixz="0.00001" iyy="0.00003" iyz="0" izz="0.00008" />
     </inertial>
     <visual>
@@ -90,7 +90,7 @@
     <inertial>
       <origin xyz="-0.132 0 0" rpy="0 0 0" />
       <inertia ixx="0.00051" ixy="0.0" ixz="0.0" iyy="0.01599" iyz="0.0" izz="0.01605" />
-      <mass value="1.0327" />
+      <mass value="0.9084" />
     </inertial>
     <visual>
       <origin
@@ -134,7 +134,7 @@
     <inertial>
       <origin xyz="0.18531 0.00068376 0.051638" rpy="0 0 0" />
       <inertia ixx="0.00036" ixy="-0.00003" ixz="0.00039" iyy="0.00423" iyz="0.00001" izz="0.00420" />
-      <mass value="0.5" />
+      <mass value="0.7089" />
     </inertial>
     <visual>
       <origin
@@ -178,7 +178,7 @@
     <inertial>
       <origin xyz="0.040231 0.0044807 0.035335" rpy="0 0 0" />
       <inertia ixx="0.00019" ixy="-0.00002" ixz="-0.00009" iyy="0.00023" iyz="0.00002" izz="0.00014" />
-      <mass value="0.4232" />
+      <mass value="0.3995" />
     </inertial>
     <visual>
       <origin
@@ -222,7 +222,7 @@
     <inertial>
       <origin xyz="0.003612 0 0" rpy="0 0 0" />
       <inertia ixx="0.00083" ixy="0" ixz="0.00007" iyy="0.00082" iyz="0" izz="0.00026" />
-      <mass value="0.35" />
+      <mass value="0.4121" />
     </inertial>
     <visual>
       <origin
@@ -266,7 +266,7 @@
     <inertial>
       <origin xyz="0.041697 2.4368E-05 0.00014464" rpy="0 0 0" />
       <inertia ixx="0.00038" ixy="0" ixz="0" iyy="0.00028" iyz="0" izz="0.00050" />
-      <mass value="0.65" />
+      <mass value="0.5" />
     </inertial>
     <visual>
       <origin
