@@ -25,7 +25,7 @@ echo "=== Link mass analysis ==="
 uv run "$SCRIPT_DIR/analyze_step.py" "$STEP_FILE" \
     --link-map "$SCRIPT_DIR/link_mapping.json" \
     --material-map "$SCRIPT_DIR/material_map.json" \
-    --density 1220 \
+    --density 1060 \
     | tee "$OUTPUT_DIR/output_links.txt"
 
 echo ""

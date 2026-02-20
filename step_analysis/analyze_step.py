@@ -194,8 +194,8 @@ def collect_depth1_parts(tree):
 def main():
     parser = argparse.ArgumentParser(description="Analyze STEP assembly for URDF mass properties")
     parser.add_argument("step_file", help="Path to the STEP file")
-    parser.add_argument("--density", type=float, default=1250.0,
-                        help="Material density in kg/m³ (default: 1250 for PLA)")
+    parser.add_argument("--density", type=float, default=1060.0,
+                        help="Material density in kg/m³ (default: 1060 for PAHT-CF)")
     parser.add_argument("--tree", action="store_true",
                         help="Print the full assembly tree")
     parser.add_argument("--link-map", type=str, default=None,

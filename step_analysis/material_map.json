@@ -1,6 +1,7 @@
 {
   "_comment": "Maps part name patterns (substring match) to density in kg/m³. First match wins. Parts not matching any pattern use the default density (--density flag). Patterns with 'mass_g' use fixed mass (no recursion into children).",
   "_notes": {
+    "PAHT-CF (Bambu Lab)": "1060 kg/m³ at 100% infill (TDS V3), PA12+CF, dark parts color (0.050, 0.050, 0.050)",
     "PLA-CF (Bambu Lab)": "1220 kg/m³ at 100% infill (TDS V3)",
     "Steel screws": "7850 kg/m³",
     "Bearing 6803ZZ": "7g (NSK datasheet), CAD vol 1.03cm³, eff density 6808",
@@ -25,8 +26,8 @@
     {"pattern": "Zahnstange", "density": 7850, "material": "Steel rack"},
     {"pattern": "Gear v", "density": 7850, "material": "Steel gear"},
     {"pattern": "dm-shaft-extension", "density": 2700, "material": "Aluminum"},
-    {"pattern": "dm-adapter", "density": 1220, "material": "PLA-CF"},
-    {"pattern": "Lager Extension", "density": 1220, "material": "PLA-CF"},
+    {"pattern": "dm-adapter", "density": 1060, "material": "PAHT-CF"},
+    {"pattern": "Lager Extension", "density": 1060, "material": "PAHT-CF"},
     {"pattern": "link0-1", "density": 2700, "material": "Aluminum"},
     {"pattern": "link1-2 v", "density": 2700, "material": "Aluminum"},
     {"pattern": "link2-3_v", "density": 2700, "material": "Aluminum"},

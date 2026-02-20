@@ -22,7 +22,7 @@ Install uv if you don't have it: `curl -LsSf https://astral.sh/uv/install.sh | s
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step \
     --link-map link_mapping.json \
     --material-map material_map.json \
-    --density 1220
+    --density 1060
 
 # List all depth-1 parts (for building link_mapping.json)
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step --list-parts
@@ -48,26 +48,26 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 
 1. The STEP file is read using OpenCascade's XCAF document reader, which preserves the assembly hierarchy and part names.
 2. Top-level (depth-1) parts are matched to URDF links via `link_mapping.json`. Path references (`"Parent > Child"`) can map sub-assembly children to different links; the parent automatically excludes those children.
-3. For each part, density is determined by substring-matching the part name against patterns in `material_map.json`. Unmatched parts use the `--density` default (1220 kg/m³ for PLA-CF).
+3. For each part, density is determined by substring-matching the part name against patterns in `material_map.json`. Unmatched parts use the `--density` default (1060 kg/m³ for PAHT-CF).
 4. Patterns with a `mass_g` field (motors, bearings, MGN9) use the known datasheet mass directly -- children are not recursed into. Patterns with only `density` (screws, aluminum, PLA) compute mass from CAD volume.
 5. STEP geometry is in mm; output mass is in kg.
 
 ## Current best estimate (2025-02)
 
-Default PLA-CF density: 1220 kg/m^3 (Bambu Lab PLA-CF, TDS V3, 100% infill).
+Default PAHT-CF density: 1060 kg/m^3 (Bambu Lab PAHT-CF, PA12+CF, TDS V3, 100% infill).
 
 | Link | Mass (g) | Notes |
 |---|---|---|
 | base_link | 450.1 | DM-J4340P + aluminum shell |
-| link1-2 | 472.4 | DM-J4340 + aluminum arm + PLA-CF adapter |
-| link2-3 | 811.4 | DM-J4340 + 2x 6803ZZ bearings + aluminum arms + PLA-CF frame |
-| link3-4 | 688.0 | DM-J4310 + 6803ZZ bearing + aluminum arms + PLA-CF frame |
-| link4-5 | 360.6 | DM-J4310 + aluminum arm + cable cover |
-| link5-6 | 370.4 | DM-J4310 + aluminum arm + shaft extensions |
-| link6-7 | 599.2 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PLA-CF) |
-| finger_left | 41.8 | Finger + adapter (PLA-CF) |
-| finger_right | 41.8 | Finger + adapter (PLA-CF) |
-| **Total** | **3835.5** | + ~77g unmapped screws |
+| link1-2 | 467.9 | DM-J4340 + aluminum arm + PAHT-CF adapter |
+| link2-3 | 776.0 | DM-J4340 + 2x 6803ZZ bearings + aluminum arms + PAHT-CF frame |
+| link3-4 | 655.9 | DM-J4310 + 6803ZZ bearing + aluminum arms + PAHT-CF frame |
+| link4-5 | 357.7 | DM-J4310 + aluminum arm + cable cover |
+| link5-6 | 368.2 | DM-J4310 + aluminum arm + shaft extensions |
+| link6-7 | 584.1 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PAHT-CF) |
+| finger_left | 36.3 | Finger + adapter (PAHT-CF) |
+| finger_right | 36.3 | Finger + adapter (PAHT-CF) |
+| **Total** | **3732.6** | + ~77g unmapped screws |
 
 ## Motor specifications
 
