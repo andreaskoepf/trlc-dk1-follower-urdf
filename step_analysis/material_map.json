@@ -9,7 +9,7 @@
     "DM4310 motor": "300g (DM-J4310 User Manual), CAD vol 102.67cm³, eff density 2922",
     "MGN9 Rail": "380 g/m stainless steel (Circuitist), 57g for 150mm, CAD vol 7.25cm³, eff density 7862",
     "MGN9 Carriage": "~26g each (Circuitist), CAD vol 3.05cm³, eff density 8519 (simplified CAD with internal ball bearings)",
-    "Aluminum parts": "6061-T6 aluminum, 2700 kg/m³"
+    "Aluminum parts": "6061-T6 aluminum, 2700 kg/m³ -- identified by silver color (0.913, 0.913, 0.922) in STEP file"
   },
   "patterns": [
     {"pattern": "Hexagon Socket", "density": 7850, "material": "Steel"},
@@ -25,7 +25,14 @@
     {"pattern": "Zahnstange", "density": 7850, "material": "Steel rack"},
     {"pattern": "Gear v", "density": 7850, "material": "Steel gear"},
     {"pattern": "dm-shaft-extension", "density": 2700, "material": "Aluminum"},
-    {"pattern": "dm-adapter", "density": 2700, "material": "Aluminum"},
-    {"pattern": "Lager Extension", "density": 2700, "material": "Aluminum"}
+    {"pattern": "dm-adapter", "density": 1220, "material": "PLA-CF"},
+    {"pattern": "Lager Extension", "density": 1220, "material": "PLA-CF"},
+    {"pattern": "link0-1", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link1-2 v", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link2-3_v", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link3-4_v0.3_L", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link3-4_v0.3_R", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link4-5_v", "density": 2700, "material": "Aluminum"},
+    {"pattern": "link5-6_v", "density": 2700, "material": "Aluminum"}
   ]
 }

@@ -58,16 +58,16 @@ Default PLA-CF density: 1220 kg/m^3 (Bambu Lab PLA-CF, TDS V3, 100% infill).
 
 | Link | Mass (g) | Notes |
 |---|---|---|
-| base_link | 408.9 | DM-J4340P + link0-1 shell |
-| link1-2 | 460.7 | DM-J4340 + shaft extension + adapter |
-| link2-3 | 768.9 | DM-J4340 + 2x 6803ZZ bearings + frame |
-| link3-4 | 644.0 | DM-J4310 + 6803ZZ bearing + frame |
-| link4-5 | 339.2 | DM-J4310 + cable cover |
-| link5-6 | 352.0 | DM-J4310 + 2x shaft extensions |
+| base_link | 450.1 | DM-J4340P + aluminum shell |
+| link1-2 | 472.4 | DM-J4340 + aluminum arm + PLA-CF adapter |
+| link2-3 | 811.4 | DM-J4340 + 2x 6803ZZ bearings + aluminum arms + PLA-CF frame |
+| link3-4 | 688.0 | DM-J4310 + 6803ZZ bearing + aluminum arms + PLA-CF frame |
+| link4-5 | 360.6 | DM-J4310 + aluminum arm + cable cover |
+| link5-6 | 370.4 | DM-J4310 + aluminum arm + shaft extensions |
 | link6-7 | 599.2 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PLA-CF) |
-| finger_left | 41.8 | Finger + adapter |
-| finger_right | 41.8 | Finger + adapter |
-| **Total** | **3656.5** | + ~77g unmapped screws |
+| finger_left | 41.8 | Finger + adapter (PLA-CF) |
+| finger_right | 41.8 | Finger + adapter (PLA-CF) |
+| **Total** | **3835.5** | + ~77g unmapped screws |
 
 ## Motor specifications
 
