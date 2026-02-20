@@ -60,15 +60,15 @@ Default PAHT-CF density: 1060 kg/m^3 (Bambu Lab PAHT-CF, PA12+CF, TDS V3, 100% i
 | Link | Mass (g) | Notes |
 |---|---|---|
 | base_link | 450.1 | DM-J4340P + aluminum shell |
-| link1-2 | 467.9 | DM-J4340 + aluminum arm + PAHT-CF adapter |
+| link1-2 | 469.7 | DM-J4340 + aluminum arm + PLA-CF rest + PAHT-CF adapter |
 | link2-3 | 776.0 | DM-J4340 + 2x 6803ZZ bearings + aluminum arms + PAHT-CF frame |
 | link3-4 | 655.9 | DM-J4310 + 6803ZZ bearing + aluminum arms + PAHT-CF frame |
-| link4-5 | 357.7 | DM-J4310 + aluminum arm + cable cover |
-| link5-6 | 368.2 | DM-J4310 + aluminum arm + shaft extensions |
-| link6-7 | 584.1 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PAHT-CF) |
-| finger_left | 36.3 | Finger + adapter (PAHT-CF) |
-| finger_right | 36.3 | Finger + adapter (PAHT-CF) |
-| **Total** | **3732.6** | + ~77g unmapped screws |
+| link4-5 | 360.6 | DM-J4310 + aluminum arm + PLA-CF cable cover |
+| link5-6 | 370.4 | DM-J4310 + aluminum arm + PLA-CF rest + shaft extensions |
+| link6-7 | 594.3 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PLA-CF) |
+| finger_left | 41.8 | Finger + adapter (PLA-CF) |
+| finger_right | 41.8 | Finger + adapter (PLA-CF) |
+| **Total** | **3760.5** | + ~77g unmapped screws |
 
 ## Motor specifications
 
