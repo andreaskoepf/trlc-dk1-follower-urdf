@@ -53,12 +53,21 @@ def match_material(part_key, material_patterns):
     return None
 
 
-def compute_node_mass(node, material_patterns, default_density):
+def find_child_node(parent_node, child_name):
+    """Find a direct child node by instance name or name."""
+    for child in parent_node["children"]:
+        key = child.get("instance_name", child["name"]) or ""
+        if child_name in key or child_name in (child["name"] or ""):
+            return child
+    return None
+
+
+def compute_node_mass(node, material_patterns, default_density, exclude=None):
     """Recursively compute mass for a node, applying per-part densities.
 
     When a node matches a pattern with 'mass_g', the known mass is used directly
     and children are not recursed into. Otherwise, density-based calculation is
-    used for leaf parts.
+    used for leaf parts. Children whose instance names are in 'exclude' are skipped.
     Returns list of (mass_kg, part_name, material_name) tuples.
     """
     results = []
@@ -74,6 +83,9 @@ def compute_node_mass(node, material_patterns, default_density):
 
     if node["children"]:
         for child in node["children"]:
+            child_key = child.get("instance_name", child["name"]) or ""
+            if exclude and child_key in exclude:
+                continue
             results.extend(compute_node_mass(
                 child, material_patterns, default_density))
     else:
@@ -258,6 +270,17 @@ def main():
             print(f"Link mapping: {args.link_map} ({len(link_map)} links)")
             print("=" * 90)
 
+            # Pre-scan for path references ("parent > child") and build
+            # an exclusion map so the parent skips those children.
+            # exclusions[depth1_key] = set of child instance names to skip
+            exclusions = {}
+            for link_name, part_keys in link_map.items():
+                for pk in part_keys:
+                    if " > " not in pk:
+                        continue
+                    parent_key, child_name = pk.split(" > ", 1)
+                    exclusions.setdefault(parent_key, set()).add(child_name)
+
             mapped_keys = set()
             total_mass = 0.0
             all_link_props = []
@@ -267,14 +290,30 @@ def main():
                 part_names_found = []
 
                 for pk in part_keys:
-                    if pk not in part_lookup:
-                        print(f"  WARNING: Part '{pk}' not found in STEP file")
-                        continue
-                    mapped_keys.add(pk)
-                    node = part_lookup[pk]
+                    if " > " in pk:
+                        # Path reference: resolve parent > child
+                        parent_key, child_name = pk.split(" > ", 1)
+                        if parent_key not in part_lookup:
+                            print(f"  WARNING: Parent '{parent_key}' not found in STEP file")
+                            continue
+                        mapped_keys.add(parent_key)
+                        parent_node = part_lookup[parent_key]
+                        node = find_child_node(parent_node, child_name)
+                        if node is None:
+                            print(f"  WARNING: Child '{child_name}' not found in '{parent_key}'")
+                            continue
+                        display_name = pk
+                    else:
+                        if pk not in part_lookup:
+                            print(f"  WARNING: Part '{pk}' not found in STEP file")
+                            continue
+                        mapped_keys.add(pk)
+                        node = part_lookup[pk]
+                        display_name = pk
 
                     part_results = compute_node_mass(
-                        node, material_patterns, args.density)
+                        node, material_patterns, args.density,
+                        exclude=exclusions.get(pk))
                     materials_used = {}
                     for mass_kg, pn, mn in part_results:
                         link_parts_data.append((mass_kg, pn, mn))
@@ -283,7 +322,7 @@ def main():
                         materials_used[mn] += mass_kg * 1000.0
                     mat_strs = [f"{mn}: {m:.1f}g" for mn, m in materials_used.items()]
                     mat_info = f" [{', '.join(mat_strs)}]" if any(m != "default" for m in materials_used) else ""
-                    part_names_found.append(f"{pk}{mat_info}")
+                    part_names_found.append(f"{display_name}{mat_info}")
 
                 props = combine_mass(link_parts_data)
                 if props is None:

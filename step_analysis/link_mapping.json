@@ -48,5 +48,13 @@
   "link6-7": [
     "link6-7_1_CABLE v0.2.0 v3:1",
     "Gripper Assembly v0.3 v4:1"
+  ],
+  "finger_left": [
+    "Gripper Assembly v0.3 v4:1 > Finger v0.2 v2:1",
+    "Gripper Assembly v0.3 v4:1 > FingerAdapter v0.2 v4:1"
+  ],
+  "finger_right": [
+    "Gripper Assembly v0.3 v4:1 > Finger v0.2 v2:2",
+    "Gripper Assembly v0.3 v4:1 > FingerAdapter v0.2 v4:2"
   ]
 }

@@ -3,7 +3,7 @@ Found 1 root shape(s)
 
 Using material map: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/material_map.json (15 patterns)
 Default density: 1220.0 kg/m³
-Link mapping: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/link_mapping.json (7 links)
+Link mapping: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/link_mapping.json (9 links)
 ==========================================================================================
 
 base_link (2 parts):
@@ -59,8 +59,18 @@ link5-6 (5 parts):
 
 link6-7 (2 parts):
     link6-7_1_CABLE v0.2.0 v3:1
-    Gripper Assembly v0.3 v4:1 [DM4310 motor: 300.0g, default: 191.6g, Stainless steel rail: 57.0g, Steel carriage: 52.0g, Steel rack: 51.6g, Steel: 23.6g]
-  Mass:    0.6828 kg  (682.8 g)
+    Gripper Assembly v0.3 v4:1 [DM4310 motor: 300.0g, default: 108.0g, Stainless steel rail: 57.0g, Steel carriage: 52.0g, Steel rack: 51.6g, Steel: 23.6g]
+  Mass:    0.5992 kg  (599.2 g)
+
+finger_left (2 parts):
+    Gripper Assembly v0.3 v4:1 > Finger v0.2 v2:1
+    Gripper Assembly v0.3 v4:1 > FingerAdapter v0.2 v4:1
+  Mass:    0.0418 kg  (41.8 g)
+
+finger_right (2 parts):
+    Gripper Assembly v0.3 v4:1 > Finger v0.2 v2:2
+    Gripper Assembly v0.3 v4:1 > FingerAdapter v0.2 v4:2
+  Mass:    0.0418 kg  (41.8 g)
 
 ==========================================================================================
 Unmapped parts (127):
@@ -204,4 +214,6 @@ Link            |   Mass (g)
   link3-4       |      644.0
   link4-5       |      339.2
   link5-6       |      352.0
-  link6-7       |      682.8
+  link6-7       |      599.2
+  finger_left   |       41.8
+  finger_right  |       41.8

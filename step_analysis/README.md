@@ -47,7 +47,7 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 ## How it works
 
 1. The STEP file is read using OpenCascade's XCAF document reader, which preserves the assembly hierarchy and part names.
-2. Top-level (depth-1) parts are matched to URDF links via `link_mapping.json`.
+2. Top-level (depth-1) parts are matched to URDF links via `link_mapping.json`. Path references (`"Parent > Child"`) can map sub-assembly children to different links; the parent automatically excludes those children.
 3. For each part, density is determined by substring-matching the part name against patterns in `material_map.json`. Unmatched parts use the `--density` default (1220 kg/m³ for PLA-CF).
 4. Patterns with a `mass_g` field (motors, bearings, MGN9) use the known datasheet mass directly -- children are not recursed into. Patterns with only `density` (screws, aluminum, PLA) compute mass from CAD volume.
 5. STEP geometry is in mm; output mass is in kg.
@@ -64,7 +64,9 @@ Default PLA-CF density: 1220 kg/m^3 (Bambu Lab PLA-CF, TDS V3, 100% infill).
 | link3-4 | 644.0 | DM-J4310 + 6803ZZ bearing + frame |
 | link4-5 | 339.2 | DM-J4310 + cable cover |
 | link5-6 | 352.0 | DM-J4310 + 2x shaft extensions |
-| link6-7 | 682.8 | Gripper assembly (DM-J4310, MGN9, rack, PLA-CF parts) |
+| link6-7 | 599.2 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PLA-CF) |
+| finger_left | 41.8 | Finger + adapter |
+| finger_right | 41.8 | Finger + adapter |
 | **Total** | **3656.5** | + ~77g unmapped screws |
 
 ## Motor specifications
