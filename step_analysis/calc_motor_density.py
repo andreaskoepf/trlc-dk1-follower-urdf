@@ -144,20 +144,14 @@ def main():
     print(f"\n\n{'='*90}")
     print("Summary by component type (for material_map.json):")
     print(f"{'='*90}")
-    print(f"\n{'Type':<22} | {'Avg Vol (cm³)':>14} | {'Mass (g)':>8} | {'Eff. Density':>14} | {'Old Density':>12}")
-    print("-" * 90)
-
-    old_densities = {
-        "DM-J4340P-2EC": 2913, "DM-J4340-2EC": 3061, "DM-J4310-2EC": 2922,
-        "6803ZZ bearing": 5500, "MGN9 Rail 150mm": 7850, "MGN9C carriage": 7850,
-    }
+    print(f"\n{'Type':<22} | {'Avg Vol (cm³)':>14} | {'Mass (g)':>8} | {'Eff. Density':>14}")
+    print("-" * 74)
 
     for ctype, entries in type_data.items():
         avg_vol = sum(e["vol_mm3"] for e in entries) / len(entries)
         avg_density = sum(e["eff_density"] for e in entries) / len(entries)
         mass_g = entries[0]["mass_g"]
-        old = old_densities.get(ctype, "?")
-        print(f"  {ctype:<20} | {avg_vol/1000:>14.2f} | {mass_g:>8} | {avg_density:>11.0f} kg/m³ | {old:>9} kg/m³")
+        print(f"  {ctype:<20} | {avg_vol/1000:>14.2f} | {mass_g:>8} | {avg_density:>11.0f} kg/m³")
 
 
 if __name__ == "__main__":

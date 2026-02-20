@@ -20,11 +20,11 @@ Component                                | Type                 | Solids |      
 Summary by component type (for material_map.json):
 ==========================================================================================
 
-Type                   |  Avg Vol (cm³) | Mass (g) |   Eff. Density |  Old Density
-------------------------------------------------------------------------------------------
-  DM-J4340P-2EC        |         128.74 |      375 |        2913 kg/m³ |      2913 kg/m³
-  DM-J4340-2EC         |         118.25 |      362 |        3061 kg/m³ |      3061 kg/m³
-  DM-J4310-2EC         |         102.67 |      300 |        2922 kg/m³ |      2922 kg/m³
-  6803ZZ bearing       |           1.03 |        7 |        6808 kg/m³ |      5500 kg/m³
-  MGN9 Rail 150mm      |           7.25 |       57 |        7861 kg/m³ |      7850 kg/m³
-  MGN9C carriage       |           3.05 |       26 |        8520 kg/m³ |      7850 kg/m³
+Type                   |  Avg Vol (cm³) | Mass (g) |   Eff. Density
+--------------------------------------------------------------------------
+  DM-J4340P-2EC        |         128.74 |      375 |        2913 kg/m³
+  DM-J4340-2EC         |         118.25 |      362 |        3061 kg/m³
+  DM-J4310-2EC         |         102.67 |      300 |        2922 kg/m³
+  6803ZZ bearing       |           1.03 |        7 |        6808 kg/m³
+  MGN9 Rail 150mm      |           7.25 |       57 |        7861 kg/m³
+  MGN9C carriage       |           3.05 |       26 |        8520 kg/m³

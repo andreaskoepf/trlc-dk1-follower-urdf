@@ -13,7 +13,12 @@ Install uv if you don't have it: `curl -LsSf https://astral.sh/uv/install.sh | s
 ## Usage
 
 ```bash
-# Full analysis grouped by URDF link
+# Regenerate all output files at once
+./generate_outputs.sh /path/to/TRLC-DK1-Follower_v0.3.0.step
+
+# Or run individual analyses:
+
+# Link mass analysis
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step \
     --link-map link_mapping.json \
     --material-map material_map.json \
@@ -37,6 +42,7 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 | `calc_motor_density.py` | Helper to back-calculate effective densities from known motor masses and CAD volumes. |
 | `link_mapping.json` | Maps STEP part instance names to URDF link names. |
 | `material_map.json` | Per-part density overrides via substring pattern matching on part names. |
+| `generate_outputs.sh` | Shell script to regenerate all `output/` files from a STEP file. |
 
 ## How it works
 

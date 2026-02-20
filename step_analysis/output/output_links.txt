@@ -1,9 +1,9 @@
 Reading STEP file: /home/koepf/robotics/trlc-dk1/hardware/TRLC-DK1-Follower_v0.3.0.step
 Found 1 root shape(s)
 
-Using material map: material_map.json (15 patterns)
+Using material map: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/material_map.json (15 patterns)
 Default density: 1220.0 kg/m³
-Link mapping: link_mapping.json (7 links)
+Link mapping: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/link_mapping.json (7 links)
 ==========================================================================================
 
 base_link (19 solids from 2 parts):
