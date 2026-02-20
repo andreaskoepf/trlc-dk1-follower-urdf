@@ -1,0 +1,52 @@
+{
+  "_comment": "Maps STEP part instance names to URDF link names. Pattern matching uses 'startswith'. Parts shared between links (motors/bearings) are assigned to the link they are rigidly attached to (rotor side vs stator side).",
+  "base_link": [
+    "DM-J4340P-2EC v5:1",
+    "link0-1 v1:1"
+  ],
+  "link1-2": [
+    "dm-shaft-extension v1:1",
+    "link1-2 v6:1",
+    "Link1-2 rest v2:1",
+    "DM-J4340-2EC v5:1",
+    "dm-adapter_v0.2.0 v2:1"
+  ],
+  "link2-3": [
+    "6803ZZ v1:1",
+    "Lager Extension v2:1",
+    "dm-shaft-extension v1:2",
+    "link2-3_v0.2.1 v4:1",
+    "link2-3-frame v1:1",
+    "DM-J4340-2EC v5:2",
+    "Lager Extension v2:2",
+    "dm-adapter_v0.2.0 v2:2",
+    "6803ZZ v1:2",
+    "dm-shaft-extension v1:3",
+    "link2-3_v0.2.1 v4:2"
+  ],
+  "link3-4": [
+    "link3-4_v0.3_L v11:1",
+    "DM-J4310-2EC-V1.1 v4:1",
+    "dm-adapter_v0.2.0 v2:3",
+    "6803ZZ v1:3",
+    "Lager Extension v2:3",
+    "link3-4_v0.3_R v1:1",
+    "link3-4-frame_v0.3.0 v6:1"
+  ],
+  "link4-5": [
+    "link4-5_v0.2.1 v2:1",
+    "DM-J4310-2EC-V1.1 v4:2",
+    "joint5_cable_cover v1:1"
+  ],
+  "link5-6": [
+    "link5-6_v0.2.2 v3:1",
+    "DM-J4310-2EC-V1.1 v4:3",
+    "link5-6-rest_v0.3 v2:1",
+    "dm-shaft-extension v1:4",
+    "dm-shaft-extension v1:5"
+  ],
+  "link6-7": [
+    "link6-7_1_CABLE v0.2.0 v3:1",
+    "Gripper Assembly v0.3 v4:1"
+  ]
+}

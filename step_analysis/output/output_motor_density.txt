@@ -1,0 +1,29 @@
+Reading STEP file: /home/koepf/robotics/trlc-dk1/hardware/TRLC-DK1-Follower_v0.3.0.step
+
+Motor Instance                      | Type               | Solids |      Vol (mm³) |  Vol (cm³) | DS Mass (g) | Eff. Density
+----------------------------------------------------------------------------------------------------------------------------------
+  DM-J4340P-2EC v5:1                | DM-J4340P-2EC      |     18 |       128741.5 |     128.74 |        375 |   2913 kg/m³
+  DM-J4340-2EC v5:1                 | DM-J4340-2EC       |      3 |       118254.0 |     118.25 |        362 |   3061 kg/m³
+  DM-J4340-2EC v5:2                 | DM-J4340-2EC       |      3 |       118254.0 |     118.25 |        362 |   3061 kg/m³
+  DM-J4310-2EC-V1.1 v4:1            | DM-J4310-2EC       |     10 |       102674.8 |     102.67 |        300 |   2922 kg/m³
+  DM-J4310-2EC-V1.1 v4:2            | DM-J4310-2EC       |     10 |       102674.8 |     102.67 |        300 |   2922 kg/m³
+  DM-J4310-2EC-V1.1 v4:3            | DM-J4310-2EC       |     10 |       102674.8 |     102.67 |        300 |   2922 kg/m³
+
+
+================================================================================
+Summary by motor type:
+================================================================================
+
+Motor Type           |  Avg Vol (cm³) | DS Mass (g) |  Recommended Eff. Density
+--------------------------------------------------------------------------------
+  DM-J4340P-2EC      |         128.74 |        375 |                   2913 kg/m³
+  DM-J4340-2EC       |         118.25 |        362 |                   3061 kg/m³
+  DM-J4310-2EC       |         102.67 |        300 |                   2922 kg/m³
+
+
+DM-J4340P-2EC density estimates (volume = 128.74 cm³):
+  If mass = 362g → effective density = 2812 kg/m³
+  If mass = 375g → effective density = 2913 kg/m³
+  If mass = 400g → effective density = 3107 kg/m³
+  If mass = 450g → effective density = 3495 kg/m³
+  If mass = 500g → effective density = 3884 kg/m³

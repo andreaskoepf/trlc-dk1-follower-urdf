@@ -1,0 +1,31 @@
+{
+  "_comment": "Maps part name patterns (substring match) to density in kg/m³. First match wins. Parts not matching any pattern use the default density (--density flag).",
+  "_notes": {
+    "PLA-CF (Bambu Lab)": "1220 kg/m³ at 100% infill (TDS V3)",
+    "Steel screws": "7850 kg/m³",
+    "Bearing 6803ZZ": "Chrome steel races + balls + grease + seals, effective ~5500",
+    "DM4340P motor+planetary": "375g (DAMIAO 2025 Product Selection Manual), CAD vol 128.74cm³, eff density 2913",
+    "DM4340 motor (no planetary)": "362g (DM-J4340-2EC User Manual V1.0), CAD vol 118.25cm³, eff density 3061",
+    "DM4310 motor": "300g (DM-J4310 User Manual), CAD vol 102.67cm³, eff density 2922",
+    "MGN9 Rail": "Stainless steel linear rail, ~300g/m -> 45g for 150mm",
+    "MGN9 Carriage": "Steel carriage block, ~12g each",
+    "Aluminum parts": "6061-T6 aluminum, 2700 kg/m³"
+  },
+  "patterns": [
+    {"pattern": "Hexagon Socket", "density": 7850, "material": "Steel"},
+    {"pattern": "Screw", "density": 7850, "material": "Steel"},
+    {"pattern": "DM-J4340P", "density": 2913, "material": "DM4340P motor asm"},
+    {"pattern": "DM-J4340-", "density": 3061, "material": "DM4340 motor"},
+    {"pattern": "DM_4340", "density": 3061, "material": "DM4340 motor"},
+    {"pattern": "DM-J4310", "density": 2922, "material": "DM4310 motor"},
+    {"pattern": "DM_4310", "density": 2922, "material": "DM4310 motor"},
+    {"pattern": "6803ZZ", "density": 5500, "material": "Bearing 6803ZZ"},
+    {"pattern": "MGN9 Rail", "density": 7850, "material": "Stainless steel rail"},
+    {"pattern": "MGN9-C", "density": 7850, "material": "Steel carriage"},
+    {"pattern": "Zahnstange", "density": 7850, "material": "Steel rack"},
+    {"pattern": "Gear v", "density": 7850, "material": "Steel gear"},
+    {"pattern": "dm-shaft-extension", "density": 2700, "material": "Aluminum"},
+    {"pattern": "dm-adapter", "density": 2700, "material": "Aluminum"},
+    {"pattern": "Lager Extension", "density": 2700, "material": "Aluminum"}
+  ]
+}
