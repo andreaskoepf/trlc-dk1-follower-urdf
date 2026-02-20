@@ -49,23 +49,23 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 1. The STEP file is read using OpenCascade's XCAF document reader, which preserves the assembly hierarchy and part names.
 2. Top-level (depth-1) parts are matched to URDF links via `link_mapping.json`.
 3. For each part, density is determined by substring-matching the part name against patterns in `material_map.json`. Unmatched parts use the `--density` default (1220 kg/m³ for PLA-CF).
-4. When a sub-assembly name matches a material pattern (e.g. "DM-J4340P" or "MGN9-C"), that density is propagated as the default for all children that don't individually match a more specific pattern.
+4. Patterns with a `mass_g` field (motors, bearings, MGN9) use the known datasheet mass directly -- children are not recursed into. Patterns with only `density` (screws, aluminum, PLA) compute mass from CAD volume.
 5. STEP geometry is in mm; output mass is in kg.
 
 ## Current best estimate (2025-02)
 
 Default PLA-CF density: 1220 kg/m^3 (Bambu Lab PLA-CF, TDS V3, 100% infill).
 
-| Link | Mass (g) | Solids | Notes |
-|---|---|---|---|
-| base_link | 426.4 | 19 | DM-J4340P + link0-1 shell |
-| link1-2 | 460.7 | 7 | DM-J4340 + shaft extension + adapter |
-| link2-3 | 768.9 | 47 | DM-J4340 + 2x 6803ZZ bearings + frame |
-| link3-4 | 644.0 | 33 | DM-J4310 + 6803ZZ bearing + frame |
-| link4-5 | 339.2 | 12 | DM-J4310 + cable cover |
-| link5-6 | 352.0 | 14 | DM-J4310 + 2x shaft extensions |
-| link6-7 | 713.1 | 70 | Gripper assembly (DM-J4310, MGN9, rack, PLA-CF parts) |
-| **Total** | **3704.3** | **202** | + ~77g unmapped screws |
+| Link | Mass (g) | Notes |
+|---|---|---|
+| base_link | 408.9 | DM-J4340P + link0-1 shell |
+| link1-2 | 460.7 | DM-J4340 + shaft extension + adapter |
+| link2-3 | 768.9 | DM-J4340 + 2x 6803ZZ bearings + frame |
+| link3-4 | 644.0 | DM-J4310 + 6803ZZ bearing + frame |
+| link4-5 | 339.2 | DM-J4310 + cable cover |
+| link5-6 | 352.0 | DM-J4310 + 2x shaft extensions |
+| link6-7 | 682.8 | Gripper assembly (DM-J4310, MGN9, rack, PLA-CF parts) |
+| **Total** | **3656.5** | + ~77g unmapped screws |
 
 ## Motor specifications
 
@@ -101,5 +101,3 @@ Effective densities are back-calculated from known datasheet masses and CAD volu
 ## Known limitations
 
 - **127 screws (~77g) are unmapped** and not assigned to specific links.
-- **Motor sub-assembly density propagation** means motor internal parts get the motor's effective density instead of the PLA default. This slightly inflates motor link masses vs. the calibrated datasheet values.
-- **No CoM or inertia** -- only mass is computed. CoM and inertia require transforming from STEP global coordinates to link-local frames.

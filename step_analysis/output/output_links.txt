@@ -6,209 +6,202 @@ Default density: 1220.0 kg/m³
 Link mapping: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/link_mapping.json (7 links)
 ==========================================================================================
 
-base_link (19 solids from 2 parts):
-    DM-J4340P-2EC v5:1 (18 solids) [DM4340 motor: 3061, default: 2913 kg/m³]
-    link0-1 v1:1 (1 solids)
-  Volume:  156561.4 mm³  (156.56 cm³)
-  Mass:    0.4264 kg  (426.4 g)
+base_link (2 parts):
+    DM-J4340P-2EC v5:1 [DM4340P motor asm: 375.0g]
+    link0-1 v1:1
+  Mass:    0.4089 kg  (408.9 g)
 
-link1-2 (7 solids from 5 parts):
-    dm-shaft-extension v1:1 (1 solids) [Aluminum: 2700 kg/m³]
-    link1-2 v6:1 (1 solids)
-    Link1-2 rest v2:1 (1 solids)
-    DM-J4340-2EC v5:1 (3 solids) [DM4340 motor: 3061, default: 3061 kg/m³]
-    dm-adapter_v0.2.0 v2:1 (1 solids) [Aluminum: 2700 kg/m³]
-  Volume:  174406.7 mm³  (174.41 cm³)
+link1-2 (5 parts):
+    dm-shaft-extension v1:1 [Aluminum: 10.2g]
+    link1-2 v6:1
+    Link1-2 rest v2:1
+    DM-J4340-2EC v5:1 [DM4340 motor: 362.0g]
+    dm-adapter_v0.2.0 v2:1 [Aluminum: 44.9g]
   Mass:    0.4607 kg  (460.7 g)
 
-link2-3 (47 solids from 11 parts):
-    6803ZZ v1:1 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
-    Lager Extension v2:1 (1 solids) [Aluminum: 2700 kg/m³]
-    dm-shaft-extension v1:2 (1 solids) [Aluminum: 2700 kg/m³]
-    link2-3_v0.2.1 v4:1 (1 solids)
-    link2-3-frame v1:1 (1 solids)
-    DM-J4340-2EC v5:2 (3 solids) [DM4340 motor: 3061, default: 3061 kg/m³]
-    Lager Extension v2:2 (1 solids) [Aluminum: 2700 kg/m³]
-    dm-adapter_v0.2.0 v2:2 (1 solids) [Aluminum: 2700 kg/m³]
-    6803ZZ v1:2 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
-    dm-shaft-extension v1:3 (1 solids) [Aluminum: 2700 kg/m³]
-    link2-3_v0.2.1 v4:2 (1 solids)
-  Volume:  402783.7 mm³  (402.78 cm³)
+link2-3 (11 parts):
+    6803ZZ v1:1 [Bearing 6803ZZ: 7.0g]
+    Lager Extension v2:1 [Aluminum: 11.4g]
+    dm-shaft-extension v1:2 [Aluminum: 10.2g]
+    link2-3_v0.2.1 v4:1
+    link2-3-frame v1:1
+    DM-J4340-2EC v5:2 [DM4340 motor: 362.0g]
+    Lager Extension v2:2 [Aluminum: 11.4g]
+    dm-adapter_v0.2.0 v2:2 [Aluminum: 44.9g]
+    6803ZZ v1:2 [Bearing 6803ZZ: 7.0g]
+    dm-shaft-extension v1:3 [Aluminum: 10.2g]
+    link2-3_v0.2.1 v4:2
   Mass:    0.7689 kg  (768.9 g)
 
-link3-4 (33 solids from 7 parts):
-    link3-4_v0.3_L v11:1 (1 solids)
-    DM-J4310-2EC-V1.1 v4:1 (10 solids) [DM4310 motor: 2922 kg/m³]
-    dm-adapter_v0.2.0 v2:3 (1 solids) [Aluminum: 2700 kg/m³]
-    6803ZZ v1:3 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
-    Lager Extension v2:3 (1 solids) [Aluminum: 2700 kg/m³]
-    link3-4_v0.3_R v1:1 (1 solids)
-    link3-4-frame_v0.3.0 v6:1 (1 solids)
-  Volume:  354613.5 mm³  (354.61 cm³)
+link3-4 (7 parts):
+    link3-4_v0.3_L v11:1
+    DM-J4310-2EC-V1.1 v4:1 [DM4310 motor: 300.0g]
+    dm-adapter_v0.2.0 v2:3 [Aluminum: 44.9g]
+    6803ZZ v1:3 [Bearing 6803ZZ: 7.0g]
+    Lager Extension v2:3 [Aluminum: 11.4g]
+    link3-4_v0.3_R v1:1
+    link3-4-frame_v0.3.0 v6:1
   Mass:    0.6440 kg  (644.0 g)
 
-link4-5 (12 solids from 3 parts):
-    link4-5_v0.2.1 v2:1 (1 solids)
-    DM-J4310-2EC-V1.1 v4:2 (10 solids) [DM4310 motor: 2922 kg/m³]
-    joint5_cable_cover v1:1 (1 solids)
-  Volume:  134812.4 mm³  (134.81 cm³)
+link4-5 (3 parts):
+    link4-5_v0.2.1 v2:1
+    DM-J4310-2EC-V1.1 v4:2 [DM4310 motor: 300.0g]
+    joint5_cable_cover v1:1
   Mass:    0.3392 kg  (339.2 g)
 
-link5-6 (14 solids from 5 parts):
-    link5-6_v0.2.2 v3:1 (1 solids)
-    DM-J4310-2EC-V1.1 v4:3 (10 solids) [DM4310 motor: 2922 kg/m³]
-    link5-6-rest_v0.3 v2:1 (1 solids)
-    dm-shaft-extension v1:4 (1 solids) [Aluminum: 2700 kg/m³]
-    dm-shaft-extension v1:5 (1 solids) [Aluminum: 2700 kg/m³]
-  Volume:  136147.8 mm³  (136.15 cm³)
+link5-6 (5 parts):
+    link5-6_v0.2.2 v3:1
+    DM-J4310-2EC-V1.1 v4:3 [DM4310 motor: 300.0g]
+    link5-6-rest_v0.3 v2:1
+    dm-shaft-extension v1:4 [Aluminum: 10.2g]
+    dm-shaft-extension v1:5 [Aluminum: 10.2g]
   Mass:    0.3520 kg  (352.0 g)
 
-link6-7 (70 solids from 2 parts):
-    link6-7_1_CABLE v0.2.0 v3:1 (1 solids)
-    Gripper Assembly v0.3 v4:1 (69 solids) [DM4310 motor: 2922, default: 1220.0, Stainless steel rail: 7862, Steel rack: 7850, Steel: 7850 kg/m³]
-  Volume:  288399.8 mm³  (288.40 cm³)
-  Mass:    0.7131 kg  (713.1 g)
+link6-7 (2 parts):
+    link6-7_1_CABLE v0.2.0 v3:1
+    Gripper Assembly v0.3 v4:1 [DM4310 motor: 300.0g, default: 191.6g, Stainless steel rail: 57.0g, Steel carriage: 52.0g, Steel rack: 51.6g, Steel: 23.6g]
+  Mass:    0.6828 kg  (682.8 g)
 
 ==========================================================================================
 Unmapped parts (127):
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:1 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:1 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:2 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:2 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:3 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:4 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:5 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:6 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:7 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:8 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:9 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:10 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:11 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:12 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:1 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:2 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:3 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:4 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:1 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:2 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:3 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:4 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:5 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:5 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:6 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:1 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:2 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:1 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:2 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:3 (1 solids)
-  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:4 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:6 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:7 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:8 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:9 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:10 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:11 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:12 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:13 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:14 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:15 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:16 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:17 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:18 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:19 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:20 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:21 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:22 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:23 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:24 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:25 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:26 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:27 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:28 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:29 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:30 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:31 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:32 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:33 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:34 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:35 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:36 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:37 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:38 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:39 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:40 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:41 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:42 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:43 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:44 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:45 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:46 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:47 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:48 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:49 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:50 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:51 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:52 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:53 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:54 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:55 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:56 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:57 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:58 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:59 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:60 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:61 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:62 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:63 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:64 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:65 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:66 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:67 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:68 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:69 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:70 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:71 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:72 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:73 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:74 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:75 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:76 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:77 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:78 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:79 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:80 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:81 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:82 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:83 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:84 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:85 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:86 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:87 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:88 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:89 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:1 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:2 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:3 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:4 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:5 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:6 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:90 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:91 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:92 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:93 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:94 (1 solids)
-  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:95 (1 solids)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:1 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:1 (1.3 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:2 (1.3 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:2 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:3 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:4 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:5 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:6 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:7 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:8 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:9 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:10 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:11 (0.9 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:12 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:1 (0.7 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:2 (0.7 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:3 (0.7 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:4 (0.7 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:1 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:2 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:3 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:4 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:5 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:5 (0.7 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:6 (0.7 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:1 (1.1 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:2 (1.1 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:1 (0.8 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:2 (0.8 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:3 (0.8 g)
+  Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:4 (0.8 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:6 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:7 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:8 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:9 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:10 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:11 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:12 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:13 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:14 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:15 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:16 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:17 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:18 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:19 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:20 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:21 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:22 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:23 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:24 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:25 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:26 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:27 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:28 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:29 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:30 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:31 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:32 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:33 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:34 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:35 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:36 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:37 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:38 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:39 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:40 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:41 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:42 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:43 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:44 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:45 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:46 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:47 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:48 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:49 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:50 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:51 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:52 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:53 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:54 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:55 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:56 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:57 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:58 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:59 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:60 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:61 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:62 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:63 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:64 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:65 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:66 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:67 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:68 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:69 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:70 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:71 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:72 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:73 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:74 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:75 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:76 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:77 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:78 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:79 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:80 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:81 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:82 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:83 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:84 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:85 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:86 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:87 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:88 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:89 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:1 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:2 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:3 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:4 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:5 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:6 (0.9 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:90 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:91 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:92 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:93 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:94 (0.5 g)
+  Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:95 (0.5 g)
   Unmapped mass: 0.0771 kg (77.1 g)
 
 ==========================================================================================
-Total mapped mass:   3.7043 kg (3704.3 g)
+Total mapped mass:   3.6565 kg (3656.5 g)
 
-Link            | Solids |   Mass (g)
-----------------------------------------
-  base_link     |     19 |      426.4
-  link1-2       |      7 |      460.7
-  link2-3       |     47 |      768.9
-  link3-4       |     33 |      644.0
-  link4-5       |     12 |      339.2
-  link5-6       |     14 |      352.0
-  link6-7       |     70 |      713.1
+Link            |   Mass (g)
+------------------------------
+  base_link     |      408.9
+  link1-2       |      460.7
+  link2-3       |      768.9
+  link3-4       |      644.0
+  link4-5       |      339.2
+  link5-6       |      352.0
+  link6-7       |      682.8

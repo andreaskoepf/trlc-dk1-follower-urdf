@@ -43,45 +43,50 @@ def compute_solid_volume(solid):
     return props.Mass()
 
 
-def get_part_density(part_key, material_patterns, default_density):
-    """Look up density for a part based on pattern matching.
-    Returns (density, material_name) tuple.
+def match_material(part_key, material_patterns):
+    """Look up material entry for a part based on pattern matching.
+    Returns the matching entry dict, or None if no match.
     """
     for entry in material_patterns:
         if entry["pattern"] in part_key:
-            return entry["density"], entry.get("material", entry["pattern"])
-    return default_density, "default"
+            return entry
+    return None
 
 
 def compute_node_mass(node, material_patterns, default_density):
     """Recursively compute mass for a node, applying per-part densities.
 
-    For assemblies, checks if the assembly name matches a material pattern.
-    If it does, that density is propagated as the default for all children.
-    Otherwise, recurses with the original default.
-    Returns list of (mass_kg, volume_mm3, part_name, density, material_name) tuples.
+    When a node matches a pattern with 'mass_g', the known mass is used directly
+    and children are not recursed into. Otherwise, density-based calculation is
+    used for leaf parts.
+    Returns list of (mass_kg, part_name, material_name) tuples.
     """
     results = []
     name = node.get("instance_name", node["name"]) or "(unnamed)"
+    match = match_material(name, material_patterns)
+
+    # Known mass: use it directly, skip children
+    if match and "mass_g" in match:
+        mat_name = match.get("material", match["pattern"])
+        mass_kg = match["mass_g"] / 1000.0
+        results.append((mass_kg, name, mat_name))
+        return results
 
     if node["children"]:
-        # Check if the assembly itself matches a material pattern;
-        # if so, propagate that density as the default for children
-        asm_density, asm_mat = get_part_density(name, material_patterns, default_density)
-        child_default = asm_density if asm_mat != "default" else default_density
         for child in node["children"]:
             results.extend(compute_node_mass(
-                child, material_patterns, child_default))
+                child, material_patterns, default_density))
     else:
         # Leaf part: apply density based on name
         shape = node["shape"]
         if shape is not None:
-            part_density, mat_name = get_part_density(name, material_patterns, default_density)
+            density = match["density"] if match else default_density
+            mat_name = match.get("material", match["pattern"]) if match else "default"
             solids = extract_solids_from_shape(shape)
             for solid in solids:
                 vol_mm3 = compute_solid_volume(solid)
-                mass_kg = vol_mm3 * 1e-9 * part_density
-                results.append((mass_kg, vol_mm3, name, part_density, mat_name))
+                mass_kg = vol_mm3 * 1e-9 * density
+                results.append((mass_kg, name, mat_name))
 
     return results
 
@@ -91,13 +96,10 @@ def combine_mass(parts_data):
     if not parts_data:
         return None
     total_mass = sum(p[0] for p in parts_data)
-    total_vol = sum(p[1] for p in parts_data)
     return {
-        "volume_mm3": total_vol,
-        "volume_cm3": total_vol / 1000.0,
         "mass_kg": total_mass,
         "mass_g": total_mass * 1000.0,
-        "num_solids": len(parts_data),
+        "num_parts": len(parts_data),
     }
 
 
@@ -271,27 +273,17 @@ def main():
                     mapped_keys.add(pk)
                     node = part_lookup[pk]
 
-                    if material_patterns:
-                        part_results = compute_node_mass(
-                            node, material_patterns, args.density)
-                        materials_used = {}
-                        for mass_kg, vol_mm3, pn, dens, mn in part_results:
-                            link_parts_data.append((mass_kg, vol_mm3, pn, dens, mn))
-                            if mn not in materials_used:
-                                materials_used[mn] = dens
-                        mat_strs = [f"{mn}: {d}" for mn, d in materials_used.items()]
-                        mat_info = f" [{', '.join(mat_strs)} kg/m³]" if any(m != "default" for m in materials_used) else ""
-                        part_names_found.append(f"{pk} ({len(part_results)} solids){mat_info}")
-                    else:
-                        shape = node["shape"]
-                        if shape is None:
-                            continue
-                        solids = extract_solids_from_shape(shape)
-                        for solid in solids:
-                            vol_mm3 = compute_solid_volume(solid)
-                            mass_kg = vol_mm3 * 1e-9 * args.density
-                            link_parts_data.append((mass_kg, vol_mm3, pk, args.density, "default"))
-                        part_names_found.append(f"{pk} ({len(solids)} solids)")
+                    part_results = compute_node_mass(
+                        node, material_patterns, args.density)
+                    materials_used = {}
+                    for mass_kg, pn, mn in part_results:
+                        link_parts_data.append((mass_kg, pn, mn))
+                        if mn not in materials_used:
+                            materials_used[mn] = 0.0
+                        materials_used[mn] += mass_kg * 1000.0
+                    mat_strs = [f"{mn}: {m:.1f}g" for mn, m in materials_used.items()]
+                    mat_info = f" [{', '.join(mat_strs)}]" if any(m != "default" for m in materials_used) else ""
+                    part_names_found.append(f"{pk}{mat_info}")
 
                 props = combine_mass(link_parts_data)
                 if props is None:
@@ -301,10 +293,9 @@ def main():
                 total_mass += props["mass_kg"]
                 all_link_props.append((link_name, props))
 
-                print(f"\n{link_name} ({props['num_solids']} solids from {len(part_names_found)} parts):")
+                print(f"\n{link_name} ({len(part_names_found)} parts):")
                 for pn in part_names_found:
                     print(f"    {pn}")
-                print(f"  Volume:  {props['volume_mm3']:.1f} mm³  ({props['volume_cm3']:.2f} cm³)")
                 print(f"  Mass:    {props['mass_kg']:.4f} kg  ({props['mass_g']:.1f} g)")
 
             # Show unmapped parts
@@ -314,25 +305,21 @@ def main():
                 print(f"\n{'='*90}")
                 print(f"Unmapped parts ({len(unmapped)}):")
                 for p in unmapped:
-                    shape = p["node"]["shape"]
-                    if shape is not None:
-                        part_density, _ = get_part_density(p["key"], material_patterns, args.density)
-                        solids = extract_solids_from_shape(shape)
-                        for solid in solids:
-                            vol_mm3 = compute_solid_volume(solid)
-                            unmapped_mass += vol_mm3 * 1e-9 * part_density
-                    n = p["node"]["num_solids"]
-                    print(f"  {p['key']:<60} ({n} solids)")
+                    part_results = compute_node_mass(
+                        p["node"], material_patterns, args.density)
+                    part_mass = sum(r[0] for r in part_results)
+                    unmapped_mass += part_mass
+                    print(f"  {p['key']:<60} ({part_mass*1000:.1f} g)")
                 print(f"  Unmapped mass: {unmapped_mass:.4f} kg ({unmapped_mass*1000:.1f} g)")
 
             print(f"\n{'='*90}")
             print(f"Total mapped mass:   {total_mass:.4f} kg ({total_mass*1000:.1f} g)")
 
             # Summary table
-            print(f"\n{'Link':<15} | {'Solids':>6} | {'Mass (g)':>10}")
-            print("-" * 40)
+            print(f"\n{'Link':<15} | {'Mass (g)':>10}")
+            print("-" * 30)
             for name, props in all_link_props:
-                print(f"  {name:<13} | {props['num_solids']:>6} | {props['mass_g']:>10.1f}")
+                print(f"  {name:<13} | {props['mass_g']:>10.1f}")
 
         else:
             # No link map: show per-part properties
@@ -347,18 +334,11 @@ def main():
             total_mass = 0.0
             for p in depth1_parts:
                 name = p["key"]
-                shape = p["node"]["shape"]
-                if shape is None:
-                    continue
-
-                part_density, mat_name = get_part_density(name, material_patterns, args.density)
-                solids = extract_solids_from_shape(shape)
-                part_vol = sum(compute_solid_volume(s) for s in solids)
-                part_mass = part_vol * 1e-9 * part_density
-
+                part_results = compute_node_mass(
+                    p["node"], material_patterns, args.density)
+                part_mass = sum(r[0] for r in part_results)
                 total_mass += part_mass
-                print(f"\n{name} ({len(solids)} solids):")
-                print(f"  Volume:  {part_vol:.1f} mm³  ({part_vol/1000:.2f} cm³)")
+                print(f"\n{name}:")
                 print(f"  Mass:    {part_mass:.4f} kg  ({part_mass*1000:.1f} g)")
 
             print(f"\n{'='*90}")

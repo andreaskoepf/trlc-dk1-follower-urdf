@@ -314,652 +314,490 @@ Using uniform density: 1250.0 kg/m³
 Found 162 depth-1 parts
 ==========================================================================================
 
-DM-J4340P-2EC v5:1 (18 solids):
-  Volume:  128741.5 mm³  (128.74 cm³)
+DM-J4340P-2EC v5:1:
   Mass:    0.1609 kg  (160.9 g)
 
-link0-1 v1:1 (1 solids):
-  Volume:  27820.0 mm³  (27.82 cm³)
+link0-1 v1:1:
   Mass:    0.0348 kg  (34.8 g)
 
-dm-shaft-extension v1:1 (1 solids):
-  Volume:  3768.5 mm³  (3.77 cm³)
+dm-shaft-extension v1:1:
   Mass:    0.0047 kg  (4.7 g)
 
-link1-2 v6:1 (1 solids):
-  Volume:  24532.1 mm³  (24.53 cm³)
+link1-2 v6:1:
   Mass:    0.0307 kg  (30.7 g)
 
-Link1-2 rest v2:1 (1 solids):
-  Volume:  11205.9 mm³  (11.21 cm³)
+Link1-2 rest v2:1:
   Mass:    0.0140 kg  (14.0 g)
 
-DM-J4340-2EC v5:1 (3 solids):
-  Volume:  118254.0 mm³  (118.25 cm³)
+DM-J4340-2EC v5:1:
   Mass:    0.1478 kg  (147.8 g)
 
-dm-adapter_v0.2.0 v2:1 (1 solids):
-  Volume:  16646.1 mm³  (16.65 cm³)
+dm-adapter_v0.2.0 v2:1:
   Mass:    0.0208 kg  (20.8 g)
 
-6803ZZ v1:1 (18 solids):
-  Volume:  1028.1 mm³  (1.03 cm³)
+6803ZZ v1:1:
   Mass:    0.0013 kg  (1.3 g)
 
-Lager Extension v2:1 (1 solids):
-  Volume:  4217.8 mm³  (4.22 cm³)
+Lager Extension v2:1:
   Mass:    0.0053 kg  (5.3 g)
 
-dm-shaft-extension v1:2 (1 solids):
-  Volume:  3768.5 mm³  (3.77 cm³)
+dm-shaft-extension v1:2:
   Mass:    0.0047 kg  (4.7 g)
 
-link2-3_v0.2.1 v4:1 (1 solids):
-  Volume:  26884.9 mm³  (26.88 cm³)
+link2-3_v0.2.1 v4:1:
   Mass:    0.0336 kg  (33.6 g)
 
-link2-3-frame v1:1 (1 solids):
-  Volume:  196084.8 mm³  (196.08 cm³)
+link2-3-frame v1:1:
   Mass:    0.2451 kg  (245.1 g)
 
-DM-J4340-2EC v5:2 (3 solids):
-  Volume:  118254.0 mm³  (118.25 cm³)
+DM-J4340-2EC v5:2:
   Mass:    0.1478 kg  (147.8 g)
 
-Lager Extension v2:2 (1 solids):
-  Volume:  4217.8 mm³  (4.22 cm³)
+Lager Extension v2:2:
   Mass:    0.0053 kg  (5.3 g)
 
-dm-adapter_v0.2.0 v2:2 (1 solids):
-  Volume:  16646.1 mm³  (16.65 cm³)
+dm-adapter_v0.2.0 v2:2:
   Mass:    0.0208 kg  (20.8 g)
 
-6803ZZ v1:2 (18 solids):
-  Volume:  1028.1 mm³  (1.03 cm³)
+6803ZZ v1:2:
   Mass:    0.0013 kg  (1.3 g)
 
-dm-shaft-extension v1:3 (1 solids):
-  Volume:  3768.5 mm³  (3.77 cm³)
+dm-shaft-extension v1:3:
   Mass:    0.0047 kg  (4.7 g)
 
-link2-3_v0.2.1 v4:2 (1 solids):
-  Volume:  26884.9 mm³  (26.88 cm³)
+link2-3_v0.2.1 v4:2:
   Mass:    0.0336 kg  (33.6 g)
 
-link3-4_v0.3_L v11:1 (1 solids):
-  Volume:  25297.9 mm³  (25.30 cm³)
+link3-4_v0.3_L v11:1:
   Mass:    0.0316 kg  (31.6 g)
 
-DM-J4310-2EC-V1.1 v4:1 (10 solids):
-  Volume:  102674.8 mm³  (102.67 cm³)
+DM-J4310-2EC-V1.1 v4:1:
   Mass:    0.1283 kg  (128.3 g)
 
-dm-adapter_v0.2.0 v2:3 (1 solids):
-  Volume:  16646.1 mm³  (16.65 cm³)
+dm-adapter_v0.2.0 v2:3:
   Mass:    0.0208 kg  (20.8 g)
 
-6803ZZ v1:3 (18 solids):
-  Volume:  1028.1 mm³  (1.03 cm³)
+6803ZZ v1:3:
   Mass:    0.0013 kg  (1.3 g)
 
-Lager Extension v2:3 (1 solids):
-  Volume:  4217.8 mm³  (4.22 cm³)
+Lager Extension v2:3:
   Mass:    0.0053 kg  (5.3 g)
 
-link4-5_v0.2.1 v2:1 (1 solids):
-  Volume:  14428.8 mm³  (14.43 cm³)
+link4-5_v0.2.1 v2:1:
   Mass:    0.0180 kg  (18.0 g)
 
-DM-J4310-2EC-V1.1 v4:2 (10 solids):
-  Volume:  102674.8 mm³  (102.67 cm³)
+DM-J4310-2EC-V1.1 v4:2:
   Mass:    0.1283 kg  (128.3 g)
 
-link5-6_v0.2.2 v3:1 (1 solids):
-  Volume:  12411.2 mm³  (12.41 cm³)
+link5-6_v0.2.2 v3:1:
   Mass:    0.0155 kg  (15.5 g)
 
-DM-J4310-2EC-V1.1 v4:3 (10 solids):
-  Volume:  102674.8 mm³  (102.67 cm³)
+DM-J4310-2EC-V1.1 v4:3:
   Mass:    0.1283 kg  (128.3 g)
 
-link5-6-rest_v0.3 v2:1 (1 solids):
-  Volume:  13524.8 mm³  (13.52 cm³)
+link5-6-rest_v0.3 v2:1:
   Mass:    0.0169 kg  (16.9 g)
 
-dm-shaft-extension v1:4 (1 solids):
-  Volume:  3768.5 mm³  (3.77 cm³)
+dm-shaft-extension v1:4:
   Mass:    0.0047 kg  (4.7 g)
 
-link3-4_v0.3_R v1:1 (1 solids):
-  Volume:  25297.9 mm³  (25.30 cm³)
+link3-4_v0.3_R v1:1:
   Mass:    0.0316 kg  (31.6 g)
 
-dm-shaft-extension v1:5 (1 solids):
-  Volume:  3768.5 mm³  (3.77 cm³)
+dm-shaft-extension v1:5:
   Mass:    0.0047 kg  (4.7 g)
 
-link6-7_1_CABLE v0.2.0 v3:1 (1 solids):
-  Volume:  5724.7 mm³  (5.72 cm³)
+link6-7_1_CABLE v0.2.0 v3:1:
   Mass:    0.0072 kg  (7.2 g)
 
-Gripper Assembly v0.3 v4:1 (69 solids):
-  Volume:  282675.0 mm³  (282.68 cm³)
+Gripper Assembly v0.3 v4:1:
   Mass:    0.3533 kg  (353.3 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:1 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:1:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:1 (1 solids):
-  Volume:  171.1 mm³  (0.17 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:1:
   Mass:    0.0002 kg  (0.2 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:2 (1 solids):
-  Volume:  171.1 mm³  (0.17 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:2:
   Mass:    0.0002 kg  (0.2 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:2 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:2:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:3 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:3:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:4 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:4:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:5 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:5:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:6 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:6:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:7 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:7:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:8 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:8:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:9 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:9:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:10 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:10:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:11 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:11:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:12 (1 solids):
-  Volume:  117.3 mm³  (0.12 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:12:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:1 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:1:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:2 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:2:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:3 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:3:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:4 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:4:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:1 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:1:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:2 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:2:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:3 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:3:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:4 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:4:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:5 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:5:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:5 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:5:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:6 (1 solids):
-  Volume:  91.3 mm³  (0.09 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 10 Steel 4.6 Plain v1:6:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:1 (1 solids):
-  Volume:  144.2 mm³  (0.14 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:1:
   Mass:    0.0002 kg  (0.2 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:2 (1 solids):
-  Volume:  144.2 mm³  (0.14 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 12 Steel 4.6 Plain v3:2:
   Mass:    0.0002 kg  (0.2 g)
 
-joint5_cable_cover v1:1 (1 solids):
-  Volume:  17708.8 mm³  (17.71 cm³)
+joint5_cable_cover v1:1:
   Mass:    0.0221 kg  (22.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:1 (1 solids):
-  Volume:  103.8 mm³  (0.10 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:1:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:2 (1 solids):
-  Volume:  103.8 mm³  (0.10 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:2:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:3 (1 solids):
-  Volume:  103.8 mm³  (0.10 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:3:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:4 (1 solids):
-  Volume:  103.8 mm³  (0.10 cm³)
+Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 6 Steel 4.6 Plain v3:4:
   Mass:    0.0001 kg  (0.1 g)
 
-link3-4-frame_v0.3.0 v6:1 (1 solids):
-  Volume:  179450.8 mm³  (179.45 cm³)
+link3-4-frame_v0.3.0 v6:1:
   Mass:    0.2243 kg  (224.3 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:6 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:6:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:7 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:7:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:8 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:8:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:9 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:9:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:10 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:10:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:11 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:11:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:12 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:12:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:13 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:13:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:14 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:14:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:15 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:15:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:16 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:16:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:17 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:17:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:18 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:18:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:19 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:19:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:20 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:20:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:21 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:21:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:22 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:22:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:23 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:23:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:24 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:24:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:25 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:25:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:26 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:26:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:27 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:27:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:28 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:28:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:29 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:29:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:30 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:30:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:31 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:31:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:32 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:32:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:33 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:33:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:34 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:34:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:35 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:35:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:36 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:36:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:37 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:37:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:38 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:38:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:39 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:39:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:40 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:40:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:41 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:41:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:42 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:42:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:43 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:43:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:44 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:44:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:45 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:45:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:46 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:46:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:47 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:47:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:48 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:48:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:49 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:49:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:50 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:50:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:51 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:51:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:52 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:52:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:53 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:53:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:54 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:54:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:55 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:55:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:56 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:56:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:57 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:57:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:58 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:58:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:59 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:59:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:60 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:60:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:61 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:61:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:62 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:62:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:63 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:63:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:64 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:64:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:65 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:65:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:66 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:66:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:67 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:67:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:68 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:68:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:69 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:69:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:70 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:70:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:71 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:71:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:72 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:72:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:73 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:73:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:74 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:74:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:75 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:75:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:76 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:76:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:77 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:77:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:78 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:78:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:79 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:79:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:80 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:80:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:81 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:81:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:82 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:82:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:83 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:83:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:84 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:84:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:85 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:85:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:86 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:86:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:87 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:87:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:88 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:88:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:89 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:89:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:1 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:1:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:2 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:2:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:3 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:3:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:4 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:4:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:5 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:5:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:6 (1 solids):
-  Volume:  118.2 mm³  (0.12 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 14 Steel 4.6 Plain v1:6:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:90 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:90:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:91 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:91:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:92 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:92:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:93 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:93:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:94 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:94:
   Mass:    0.0001 kg  (0.1 g)
 
-Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:95 (1 solids):
-  Volume:  64.4 mm³  (0.06 cm³)
+Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:95:
   Mass:    0.0001 kg  (0.1 g)
 
 ==========================================================================================
