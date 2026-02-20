@@ -8,59 +8,59 @@ Link mapping: /home/koepf/robotics/trlc-dk1-follower-urdf/step_analysis/link_map
 
 base_link (2 parts):
     DM-J4340P-2EC v5:1 [DM4340P motor asm: 375.0g]
-    link0-1 v1:1 [Aluminum: 75.1g]
-  Mass:    0.4501 kg  (450.1 g)
+    link0-1 v1:1 [Aluminum 5052: 74.6g]
+  Mass:    0.4496 kg  (449.6 g)
 
 link1-2 (5 parts):
-    dm-shaft-extension v1:1 [Aluminum: 10.2g]
-    link1-2 v6:1 [Aluminum: 66.2g]
+    dm-shaft-extension v1:1 [Aluminum 5052: 10.1g]
+    link1-2 v6:1 [Aluminum 5052: 65.7g]
     Link1-2 rest v2:1 [PLA-CF: 13.7g]
     DM-J4340-2EC v5:1 [DM4340 motor: 362.0g]
     dm-adapter_v0.2.0 v2:1 [PAHT-CF: 17.6g]
-  Mass:    0.4697 kg  (469.7 g)
+  Mass:    0.4692 kg  (469.2 g)
 
 link2-3 (11 parts):
     6803ZZ v1:1 [Bearing 6803ZZ: 7.0g]
     Lager Extension v2:1 [PAHT-CF: 4.5g]
-    dm-shaft-extension v1:2 [Aluminum: 10.2g]
-    link2-3_v0.2.1 v4:1 [Aluminum: 72.6g]
+    dm-shaft-extension v1:2 [Aluminum 5052: 10.1g]
+    link2-3_v0.2.1 v4:1 [Aluminum 5052: 72.1g]
     link2-3-frame v1:1
     DM-J4340-2EC v5:2 [DM4340 motor: 362.0g]
     Lager Extension v2:2 [PAHT-CF: 4.5g]
     dm-adapter_v0.2.0 v2:2 [PAHT-CF: 17.6g]
     6803ZZ v1:2 [Bearing 6803ZZ: 7.0g]
-    dm-shaft-extension v1:3 [Aluminum: 10.2g]
-    link2-3_v0.2.1 v4:2 [Aluminum: 72.6g]
-  Mass:    0.7760 kg  (776.0 g)
+    dm-shaft-extension v1:3 [Aluminum 5052: 10.1g]
+    link2-3_v0.2.1 v4:2 [Aluminum 5052: 72.1g]
+  Mass:    0.7747 kg  (774.7 g)
 
 link3-4 (7 parts):
-    link3-4_v0.3_L v11:1 [Aluminum: 68.3g]
+    link3-4_v0.3_L v11:1 [Aluminum 5052: 67.8g]
     DM-J4310-2EC-V1.1 v4:1 [DM4310 motor: 300.0g]
     dm-adapter_v0.2.0 v2:3 [PAHT-CF: 17.6g]
     6803ZZ v1:3 [Bearing 6803ZZ: 7.0g]
     Lager Extension v2:3 [PAHT-CF: 4.5g]
-    link3-4_v0.3_R v1:1 [Aluminum: 68.3g]
+    link3-4_v0.3_R v1:1 [Aluminum 5052: 67.8g]
     link3-4-frame_v0.3.0 v6:1
-  Mass:    0.6559 kg  (655.9 g)
+  Mass:    0.6549 kg  (654.9 g)
 
 link4-5 (3 parts):
-    link4-5_v0.2.1 v2:1 [Aluminum: 39.0g]
+    link4-5_v0.2.1 v2:1 [Aluminum 5052: 38.7g]
     DM-J4310-2EC-V1.1 v4:2 [DM4310 motor: 300.0g]
     joint5_cable_cover v1:1 [PLA-CF: 21.6g]
-  Mass:    0.3606 kg  (360.6 g)
+  Mass:    0.3603 kg  (360.3 g)
 
 link5-6 (5 parts):
-    link5-6_v0.2.2 v3:1 [Aluminum: 33.5g]
+    link5-6_v0.2.2 v3:1 [Aluminum 5052: 33.3g]
     DM-J4310-2EC-V1.1 v4:3 [DM4310 motor: 300.0g]
     link5-6-rest_v0.3 v2:1 [PLA-CF: 16.5g]
-    dm-shaft-extension v1:4 [Aluminum: 10.2g]
-    dm-shaft-extension v1:5 [Aluminum: 10.2g]
-  Mass:    0.3704 kg  (370.4 g)
+    dm-shaft-extension v1:4 [Aluminum 5052: 10.1g]
+    dm-shaft-extension v1:5 [Aluminum 5052: 10.1g]
+  Mass:    0.3700 kg  (370.0 g)
 
 link6-7 (2 parts):
     link6-7_1_CABLE v0.2.0 v3:1
-    Gripper Assembly v0.3 v4:1 [DM4310 motor: 300.0g, PLA-CF: 77.5g, default: 26.5g, Stainless steel rail: 57.0g, Steel carriage: 52.0g, Steel rack: 51.6g, Steel: 23.6g]
-  Mass:    0.5943 kg  (594.3 g)
+    Gripper Assembly v0.3 v4:1 [DM4310 motor: 300.0g, PLA-CF: 77.5g, default: 26.5g, Stainless steel rail: 57.0g, Steel carriage: 32.0g, Steel rack: 51.6g, Steel: 23.6g]
+  Mass:    0.5743 kg  (574.3 g)
 
 finger_left (2 parts):
     Gripper Assembly v0.3 v4:1 > Finger v0.2 v2:1 [PLA-CF: 25.0g]
@@ -204,16 +204,16 @@ Unmapped parts (127):
   Unmapped mass: 0.0771 kg (77.1 g)
 
 ==========================================================================================
-Total mapped mass:   3.7605 kg (3760.5 g)
+Total mapped mass:   3.7365 kg (3736.5 g)
 
 Link            |   Mass (g)
 ------------------------------
-  base_link     |      450.1
-  link1-2       |      469.7
-  link2-3       |      776.0
-  link3-4       |      655.9
-  link4-5       |      360.6
-  link5-6       |      370.4
-  link6-7       |      594.3
+  base_link     |      449.6
+  link1-2       |      469.2
+  link2-3       |      774.7
+  link3-4       |      654.9
+  link4-5       |      360.3
+  link5-6       |      370.0
+  link6-7       |      574.3
   finger_left   |       41.8
   finger_right  |       41.8

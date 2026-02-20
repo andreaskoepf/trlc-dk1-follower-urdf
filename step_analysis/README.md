@@ -59,16 +59,16 @@ Default PAHT-CF density: 1060 kg/m^3 (Bambu Lab PAHT-CF, PA12+CF, TDS V3, 100% i
 
 | Link | Mass (g) | Notes |
 |---|---|---|
-| base_link | 450.1 | DM-J4340P + aluminum shell |
-| link1-2 | 469.7 | DM-J4340 + aluminum arm + PLA-CF rest + PAHT-CF adapter |
-| link2-3 | 776.0 | DM-J4340 + 2x 6803ZZ bearings + aluminum arms + PAHT-CF frame |
-| link3-4 | 655.9 | DM-J4310 + 6803ZZ bearing + aluminum arms + PAHT-CF frame |
-| link4-5 | 360.6 | DM-J4310 + aluminum arm + PLA-CF cable cover |
-| link5-6 | 370.4 | DM-J4310 + aluminum arm + PLA-CF rest + shaft extensions |
-| link6-7 | 594.3 | Gripper assembly excl. fingers (DM-J4310, MGN9, rack, PLA-CF) |
+| base_link | 449.6 | DM-J4340P + Al 5052 shell |
+| link1-2 | 469.2 | DM-J4340 + Al 5052 arm + PLA-CF rest + PAHT-CF adapter |
+| link2-3 | 774.7 | DM-J4340 + 2x 6803ZZ bearings + Al 5052 arms + PAHT-CF frame |
+| link3-4 | 654.9 | DM-J4310 + 6803ZZ bearing + Al 5052 arms + PAHT-CF frame |
+| link4-5 | 360.3 | DM-J4310 + Al 5052 arm + PLA-CF cable cover |
+| link5-6 | 370.0 | DM-J4310 + Al 5052 arm + PLA-CF rest + shaft extensions |
+| link6-7 | 574.3 | Gripper assembly excl. fingers (DM-J4310, MGN9 GCR15, rack, PLA-CF) |
 | finger_left | 41.8 | Finger + adapter (PLA-CF) |
 | finger_right | 41.8 | Finger + adapter (PLA-CF) |
-| **Total** | **3760.5** | + ~77g unmapped screws |
+| **Total** | **3736.5** | + ~77g unmapped screws |
 
 ## Motor specifications
 
@@ -98,8 +98,8 @@ Effective densities are back-calculated from known datasheet masses and CAD volu
 | DM-J4340-2EC | DM-J4340-2EC User Manual V1.0 | 362 | 118.25 | 3061 |
 | DM-J4310-2EC | DM-J4310 User Manual | 300 | 102.67 | 2922 |
 | 6803ZZ bearing | NSK datasheet | 7 | 1.03 | 6808 |
-| MGN9 Rail 150mm | Circuitist (380 g/m) | 57 | 7.25 | 7862 |
-| MGN9C carriage | Circuitist | 26 | 3.05 | 8520 |
+| MGN9 Rail 150mm | GCR15 bearing steel (0.38 kg/m) | 57 | 7.25 | 7862 |
+| MGN9C carriage | Measured | 16 | 3.05 | 5246 |
 
 ## Known limitations
 

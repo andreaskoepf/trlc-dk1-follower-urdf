@@ -8,9 +8,9 @@
     "DM4340P motor+planetary": "375g (DAMIAO 2025 Product Selection Manual), CAD vol 128.74cm³, eff density 2913",
     "DM4340 motor (no planetary)": "362g (DM-J4340-2EC User Manual V1.0), CAD vol 118.25cm³, eff density 3061",
     "DM4310 motor": "300g (DM-J4310 User Manual), CAD vol 102.67cm³, eff density 2922",
-    "MGN9 Rail": "380 g/m stainless steel (Circuitist), 57g for 150mm, CAD vol 7.25cm³, eff density 7862",
-    "MGN9 Carriage": "~26g each (Circuitist), CAD vol 3.05cm³, eff density 8519 (simplified CAD with internal ball bearings)",
-    "Aluminum parts": "6061-T6 aluminum, 2700 kg/m³ -- identified by silver color (0.913, 0.913, 0.922) in STEP file"
+    "MGN9 Rail": "bearing steel GCR15, 380 g/m (0.38 kg/m), 57g for 150mm, CAD vol 7.25cm³, eff density 7862",
+    "MGN9 Carriage": "16g each (measured), CAD vol 3.05cm³, eff density 5246",
+    "Aluminum parts": "5052 aluminum sheet metal, 2680 kg/m³ -- identified by silver color (0.913, 0.913, 0.922) in STEP file"
   },
   "patterns": [
     {"pattern": "Hexagon Socket", "density": 7850, "material": "Steel"},
@@ -22,10 +22,10 @@
     {"pattern": "DM_4310", "mass_g": 300, "material": "DM4310 motor"},
     {"pattern": "6803ZZ", "mass_g": 7, "material": "Bearing 6803ZZ"},
     {"pattern": "MGN9 Rail", "mass_g": 57, "material": "Stainless steel rail"},
-    {"pattern": "MGN9-C", "mass_g": 26, "material": "Steel carriage"},
+    {"pattern": "MGN9-C", "mass_g": 16, "material": "Steel carriage"},
     {"pattern": "Zahnstange", "density": 7850, "material": "Steel rack"},
     {"pattern": "Gear v", "density": 7850, "material": "Steel gear"},
-    {"pattern": "dm-shaft-extension", "density": 2700, "material": "Aluminum"},
+    {"pattern": "dm-shaft-extension", "density": 2680, "material": "Aluminum 5052"},
     {"pattern": "dm-adapter", "density": 1060, "material": "PAHT-CF"},
     {"pattern": "Lager Extension", "density": 1060, "material": "PAHT-CF"},
     {"pattern": "Camera Chassis", "density": 1220, "material": "PLA-CF"},
@@ -35,12 +35,12 @@
     {"pattern": "joint5_cable_cover", "density": 1220, "material": "PLA-CF"},
     {"pattern": "link5-6-rest", "density": 1220, "material": "PLA-CF"},
     {"pattern": "Link1-2 rest", "density": 1220, "material": "PLA-CF"},
-    {"pattern": "link0-1", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link1-2 v", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link2-3_v", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link3-4_v0.3_L", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link3-4_v0.3_R", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link4-5_v", "density": 2700, "material": "Aluminum"},
-    {"pattern": "link5-6_v", "density": 2700, "material": "Aluminum"}
+    {"pattern": "link0-1", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link1-2 v", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link2-3_v", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link3-4_v0.3_L", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link3-4_v0.3_R", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link4-5_v", "density": 2680, "material": "Aluminum 5052"},
+    {"pattern": "link5-6_v", "density": 2680, "material": "Aluminum 5052"}
   ]
 }
