@@ -55,20 +55,20 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 
 ## Current best estimate (2025-02)
 
-Default PAHT-CF density: 1060 kg/m^3 (Bambu Lab PAHT-CF, PA12+CF, TDS V3, 100% infill).
+Default PAHT-CF density: 530 kg/m^3 (Bambu Lab PAHT-CF, PA12+CF, TDS V3, 50% infill; 1060 at 100%).
 
 | Link | Mass (g) | Notes |
 |---|---|---|
 | base_link | 449.6 | DM-J4340P + Al 5052 shell |
-| link1-2 | 469.2 | DM-J4340 + Al 5052 arm + PLA-CF rest + PAHT-CF adapter |
-| link2-3 | 774.7 | DM-J4340 + 2x 6803ZZ bearings + Al 5052 arms + PAHT-CF frame |
-| link3-4 | 654.9 | DM-J4310 + 6803ZZ bearing + Al 5052 arms + PAHT-CF frame |
+| link1-2 | 460.3 | DM-J4340 + Al 5052 arm + PLA-CF rest + PAHT-CF adapter |
+| link2-3 | 657.5 | DM-J4340 + 2x 6803ZZ bearings + Al 5052 arms + PAHT-CF frame (50%) |
+| link3-4 | 548.8 | DM-J4310 + 6803ZZ bearing + Al 5052 arms + PAHT-CF frame (50%) |
 | link4-5 | 360.3 | DM-J4310 + Al 5052 arm + PLA-CF cable cover |
 | link5-6 | 370.0 | DM-J4310 + Al 5052 arm + PLA-CF rest + shaft extensions |
-| link6-7 | 574.3 | Gripper assembly excl. fingers (DM-J4310, MGN9 GCR15, rack, PLA-CF) |
+| link6-7 | 558.0 | Gripper assembly excl. fingers (DM-J4310, MGN9 GCR15, rack, PLA-CF) |
 | finger_left | 41.8 | Finger + adapter (PLA-CF) |
 | finger_right | 41.8 | Finger + adapter (PLA-CF) |
-| **Total** | **3736.5** | + ~77g unmapped screws |
+| **Total** | **3488.0** | + ~77g unmapped screws |
 
 ## Motor specifications
 
