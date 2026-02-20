@@ -45,4 +45,10 @@ uv run "$SCRIPT_DIR/calc_motor_density.py" "$STEP_FILE" \
     | tee "$OUTPUT_DIR/output_motor_density.txt"
 
 echo ""
+echo "=== Part colors ==="
+uv run "$SCRIPT_DIR/list_colors.py" "$STEP_FILE" \
+    > "$OUTPUT_DIR/output_colors.txt"
+echo "Written to output/output_colors.txt (too large to display)"
+
+echo ""
 echo "Done. Output files in $OUTPUT_DIR/"

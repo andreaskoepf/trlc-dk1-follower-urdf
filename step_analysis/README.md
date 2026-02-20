@@ -40,6 +40,7 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 |---|---|
 | `analyze_step.py` | Main analysis script. Reads STEP via XCAF, groups parts by link, computes mass properties. |
 | `calc_motor_density.py` | Helper to back-calculate effective densities from known motor masses and CAD volumes. |
+| `list_colors.py` | Extract part colors from STEP file to help identify materials. |
 | `link_mapping.json` | Maps STEP part instance names to URDF link names. |
 | `material_map.json` | Per-part density overrides via substring pattern matching on part names. |
 | `generate_outputs.sh` | Shell script to regenerate all `output/` files from a STEP file. |
