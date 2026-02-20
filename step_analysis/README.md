@@ -1,11 +1,11 @@
 # STEP Analysis Tool
 
-Extracts mass, center of mass, and inertia tensor values from the TRLC-DK1-Follower STEP assembly file, grouped by URDF link. Uses per-part material densities via pattern matching on assembly part names.
+Extracts mass properties from the TRLC-DK1-Follower STEP assembly file, grouped by URDF link. Uses per-part material densities via pattern matching on assembly part names.
 
 ## Prerequisites
 
 Scripts use [PEP 723](https://peps.python.org/pep-0723/) inline script metadata, so
-[uv](https://docs.astral.sh/uv/) handles dependencies (cadquery, numpy) automatically -- no
+[uv](https://docs.astral.sh/uv/) handles dependencies (cadquery) automatically -- no
 manual venv setup needed.
 
 Install uv if you don't have it: `curl -LsSf https://astral.sh/uv/install.sh | sh`
@@ -13,12 +13,11 @@ Install uv if you don't have it: `curl -LsSf https://astral.sh/uv/install.sh | s
 ## Usage
 
 ```bash
-# Full analysis with URDF output
+# Full analysis grouped by URDF link
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step \
     --link-map link_mapping.json \
     --material-map material_map.json \
-    --density 1220 \
-    --urdf
+    --density 1220
 
 # List all depth-1 parts (for building link_mapping.json)
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step --list-parts
@@ -26,7 +25,7 @@ uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step --list-parts
 # Print full assembly tree
 uv run analyze_step.py /path/to/TRLC-DK1-Follower_v0.3.0.step --tree
 
-# Calculate motor effective densities from datasheet masses
+# Calculate effective densities from datasheet masses
 uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 ```
 
@@ -44,9 +43,8 @@ uv run calc_motor_density.py /path/to/TRLC-DK1-Follower_v0.3.0.step
 1. The STEP file is read using OpenCascade's XCAF document reader, which preserves the assembly hierarchy and part names.
 2. Top-level (depth-1) parts are matched to URDF links via `link_mapping.json`.
 3. For each part, density is determined by substring-matching the part name against patterns in `material_map.json`. Unmatched parts use the `--density` default (1220 kg/m³ for PLA-CF).
-4. Sub-assemblies (e.g. "Gripper Assembly") are recursed into so each internal part gets its own density.
-5. Mass properties are combined per link using the parallel axis theorem.
-6. STEP geometry is in mm; output is in SI units (m, kg, kg*m^2).
+4. When a sub-assembly name matches a material pattern (e.g. "DM-J4340P" or "MGN9-C"), that density is propagated as the default for all children that don't individually match a more specific pattern.
+5. STEP geometry is in mm; output mass is in kg.
 
 ## Current best estimate (2025-02)
 
@@ -54,14 +52,14 @@ Default PLA-CF density: 1220 kg/m^3 (Bambu Lab PLA-CF, TDS V3, 100% infill).
 
 | Link | Mass (g) | Solids | Notes |
 |---|---|---|---|
-| base_link | 408.5 | 19 | DM-J4340P + link0-1 shell |
-| link1-2 | 444.2 | 7 | DM-J4340 + shaft extension + adapter |
-| link2-3 | 749.7 | 47 | DM-J4340 + 2x 6803ZZ bearings + frame |
-| link3-4 | 642.7 | 33 | DM-J4310 + 6803ZZ bearing + frame |
+| base_link | 426.4 | 19 | DM-J4340P + link0-1 shell |
+| link1-2 | 460.7 | 7 | DM-J4340 + shaft extension + adapter |
+| link2-3 | 768.9 | 47 | DM-J4340 + 2x 6803ZZ bearings + frame |
+| link3-4 | 644.0 | 33 | DM-J4310 + 6803ZZ bearing + frame |
 | link4-5 | 339.2 | 12 | DM-J4310 + cable cover |
 | link5-6 | 352.0 | 14 | DM-J4310 + 2x shaft extensions |
-| link6-7 | 638.2 | 70 | Gripper assembly (DM-J4310, MGN9, rack, PLA-CF parts) |
-| **Total** | **3574.5** | **202** | + ~77g unmapped screws |
+| link6-7 | 713.1 | 70 | Gripper assembly (DM-J4310, MGN9, rack, PLA-CF parts) |
+| **Total** | **3704.3** | **202** | + ~77g unmapped screws |
 
 ## Motor specifications
 
@@ -81,9 +79,21 @@ Sources: DAMIAO 2025 Product Selection Manual, DM-J4340-2EC User Manual V1.0, DM
 
 Joint assignments: joints 1-3 use DM-J4340 (joint 1 uses the P variant), joints 4-6 and gripper use DM-J4310.
 
+## Effective densities for non-PLA components
+
+Effective densities are back-calculated from known datasheet masses and CAD volumes (`density = mass / volume`). This compensates for simplified CAD geometry (e.g. bearings without internal voids, carriages without ball bearings).
+
+| Component | Mass source | Mass (g) | CAD vol (cm^3) | Eff. density (kg/m^3) |
+|---|---|---|---|---|
+| DM-J4340P-2EC | DAMIAO 2025 Product Selection Manual | 375 | 128.74 | 2913 |
+| DM-J4340-2EC | DM-J4340-2EC User Manual V1.0 | 362 | 118.25 | 3061 |
+| DM-J4310-2EC | DM-J4310 User Manual | 300 | 102.67 | 2922 |
+| 6803ZZ bearing | NSK datasheet | 7 | 1.03 | 6808 |
+| MGN9 Rail 150mm | Circuitist (380 g/m) | 57 | 7.25 | 7862 |
+| MGN9C carriage | Circuitist | 26 | 3.05 | 8520 |
+
 ## Known limitations
 
-- **CoM values are in the global STEP coordinate frame**, not link-local. Transforming to link-local requires the joint origins from the URDF.
 - **127 screws (~77g) are unmapped** and not assigned to specific links.
-- **MGN9 rail/carriage CAD models** may be simplified solid blocks, possibly overestimating their volume and therefore mass.
-- **Bearing 6803ZZ effective density (5500 kg/m^3)** is an estimate; real bearings have internal voids.
+- **Motor sub-assembly density propagation** means motor internal parts get the motor's effective density instead of the PLA default. This slightly inflates motor link masses vs. the calibrated datasheet values.
+- **No CoM or inertia** -- only mass is computed. CoM and inertia require transforming from STEP global coordinates to link-local frames.

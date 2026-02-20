@@ -3,10 +3,13 @@
 # requires-python = ">=3.10"
 # dependencies = ["cadquery"]
 # ///
-"""Calculate effective motor densities from CAD volumes and datasheet masses.
+"""Calculate effective densities from CAD volumes and datasheet masses.
 
-Reads the STEP file, extracts volumes for each motor instance, and back-calculates
-the effective density needed to match datasheet masses.
+Reads the STEP file, extracts volumes for motors, bearings, and linear rail
+components, and back-calculates effective densities to match known masses.
+
+Usage:
+    uv run calc_motor_density.py [path/to/file.step]
 """
 
 import os
@@ -20,24 +23,32 @@ from OCP.TCollection import TCollection_ExtendedString
 from OCP.TDF import TDF_LabelSequence
 from OCP.GProp import GProp_GProps
 from OCP.BRepGProp import BRepGProp
-from OCP.TopExp import TopExp_Explorer
-from OCP.TopAbs import TopAbs_SOLID
-from OCP.TopoDS import TopoDS
 
-from analyze_step import walk_assembly, collect_depth1_parts, get_label_name, extract_solids_from_shape
+from analyze_step import walk_assembly, collect_depth1_parts, extract_solids_from_shape
 
 
 DEFAULT_STEP_FILE = "TRLC-DK1-Follower_v0.3.0.step"
 
-# Motor instances in the STEP file and their datasheet masses
-MOTORS = {
-    "DM-J4340P-2EC v5:1":      {"datasheet_mass_g": 375,  "type": "DM-J4340P-2EC"},
-    "DM-J4340-2EC v5:1":       {"datasheet_mass_g": 362,  "type": "DM-J4340-2EC"},
-    "DM-J4340-2EC v5:2":       {"datasheet_mass_g": 362,  "type": "DM-J4340-2EC"},
-    "DM-J4310-2EC-V1.1 v4:1":  {"datasheet_mass_g": 300,  "type": "DM-J4310-2EC"},
-    "DM-J4310-2EC-V1.1 v4:2":  {"datasheet_mass_g": 300,  "type": "DM-J4310-2EC"},
-    "DM-J4310-2EC-V1.1 v4:3":  {"datasheet_mass_g": 300,  "type": "DM-J4310-2EC"},
-}
+# Known components with datasheet masses (in grams).
+# "path" is a list of name substrings to walk into nested assemblies.
+# A single-element path matches depth-1 parts; multi-element paths recurse.
+COMPONENTS = [
+    # Motors (depth-1 parts)
+    {"path": ["DM-J4340P-2EC v5:1"],     "mass_g": 375, "type": "DM-J4340P-2EC"},
+    {"path": ["DM-J4340-2EC v5:1"],       "mass_g": 362, "type": "DM-J4340-2EC"},
+    {"path": ["DM-J4340-2EC v5:2"],       "mass_g": 362, "type": "DM-J4340-2EC"},
+    {"path": ["DM-J4310-2EC-V1.1 v4:1"],  "mass_g": 300, "type": "DM-J4310-2EC"},
+    {"path": ["DM-J4310-2EC-V1.1 v4:2"],  "mass_g": 300, "type": "DM-J4310-2EC"},
+    {"path": ["DM-J4310-2EC-V1.1 v4:3"],  "mass_g": 300, "type": "DM-J4310-2EC"},
+    # Bearings (depth-1 parts, each is an 18-solid sub-assembly)
+    {"path": ["6803ZZ v1:1"],  "mass_g": 7, "type": "6803ZZ bearing"},
+    {"path": ["6803ZZ v1:2"],  "mass_g": 7, "type": "6803ZZ bearing"},
+    {"path": ["6803ZZ v1:3"],  "mass_g": 7, "type": "6803ZZ bearing"},
+    # MGN9 components (inside Gripper Assembly sub-assembly)
+    {"path": ["Gripper Assembly", "MGN9 Rail 150mm"],  "mass_g": 57, "type": "MGN9 Rail 150mm"},
+    {"path": ["Gripper Assembly", "MGN9-C v2 v2:1"],   "mass_g": 26, "type": "MGN9C carriage"},
+    {"path": ["Gripper Assembly", "MGN9-C v2 v2:2"],   "mass_g": 26, "type": "MGN9C carriage"},
+]
 
 
 def get_total_volume_mm3(node):
@@ -55,6 +66,27 @@ def get_total_volume_mm3(node):
                 BRepGProp.VolumeProperties_s(solid, props)
                 total_vol += props.Mass()  # volume in mm³
     return total_vol
+
+
+def find_node_by_path(root_children, path):
+    """Walk into the assembly tree following a path of name substrings.
+    Returns the matching node or None.
+    """
+    current_children = root_children
+    node = None
+    for segment in path:
+        found = False
+        for child in current_children:
+            key = child.get("instance_name", child["name"]) or ""
+            name = child["name"] or ""
+            if segment in key or segment in name:
+                node = child
+                current_children = child.get("children", [])
+                found = True
+                break
+        if not found:
+            return None
+    return node
 
 
 def main():
@@ -80,73 +112,52 @@ def main():
 
     root_label = roots.Value(1)
     tree = walk_assembly(shape_tool, root_label)
-    depth1_parts = collect_depth1_parts(tree)
 
-    part_lookup = {p["key"]: p["node"] for p in depth1_parts}
+    print(f"\n{'Component':<40} | {'Type':<20} | {'Solids':>6} | {'Vol (mm³)':>14} | {'Vol (cm³)':>10} | {'Mass (g)':>8} | {'Eff. Density':>14}")
+    print("-" * 125)
 
-    print(f"\n{'Motor Instance':<35} | {'Type':<18} | {'Solids':>6} | {'Vol (mm³)':>14} | {'Vol (cm³)':>10} | {'DS Mass (g)':>10} | {'Eff. Density':>12}")
-    print("-" * 130)
+    type_data = {}
 
-    # Group by motor type for averaging
-    type_volumes = {}
+    for comp in COMPONENTS:
+        path = comp["path"]
+        mass_g = comp["mass_g"]
+        ctype = comp["type"]
+        label = " > ".join(path) if len(path) > 1 else path[0]
 
-    for motor_key, info in MOTORS.items():
-        if motor_key not in part_lookup:
-            print(f"  WARNING: {motor_key} not found")
+        node = find_node_by_path(tree["children"], path)
+        if node is None:
+            print(f"  WARNING: {label} not found")
             continue
 
-        node = part_lookup[motor_key]
         vol_mm3 = get_total_volume_mm3(node)
         vol_cm3 = vol_mm3 / 1000.0
         n_solids = node["num_solids"]
-
-        mtype = info["type"]
-        ds_mass = info["datasheet_mass_g"]
-
-        if ds_mass is not None:
-            vol_m3 = vol_mm3 * 1e-9
-            mass_kg = ds_mass / 1000.0
-            eff_density = mass_kg / vol_m3 if vol_m3 > 0 else 0
-            dens_str = f"{eff_density:.0f} kg/m³"
-        else:
-            eff_density = None
-            dens_str = "N/A (no mass)"
-
-        ds_str = f"{ds_mass}" if ds_mass else "unknown"
-
-        print(f"  {motor_key:<33} | {mtype:<18} | {n_solids:>6} | {vol_mm3:>14.1f} | {vol_cm3:>10.2f} | {ds_str:>10} | {dens_str:>12}")
-
-        if mtype not in type_volumes:
-            type_volumes[mtype] = []
-        type_volumes[mtype].append({"vol_mm3": vol_mm3, "ds_mass_g": ds_mass, "eff_density": eff_density})
-
-    print(f"\n\n{'='*80}")
-    print("Summary by motor type:")
-    print(f"{'='*80}")
-    print(f"\n{'Motor Type':<20} | {'Avg Vol (cm³)':>14} | {'DS Mass (g)':>10} | {'Recommended Eff. Density':>25}")
-    print("-" * 80)
-
-    for mtype, entries in type_volumes.items():
-        avg_vol_mm3 = sum(e["vol_mm3"] for e in entries) / len(entries)
-        avg_vol_cm3 = avg_vol_mm3 / 1000.0
-        ds_mass = entries[0]["ds_mass_g"]
-        densities = [e["eff_density"] for e in entries if e["eff_density"] is not None]
-
-        if densities:
-            avg_density = sum(densities) / len(densities)
-            print(f"  {mtype:<18} | {avg_vol_cm3:>14.2f} | {ds_mass:>10} | {avg_density:>22.0f} kg/m³")
-        else:
-            print(f"  {mtype:<18} | {avg_vol_cm3:>14.2f} | {'unknown':>10} | {'(need datasheet mass)':>25}")
-
-    # Also compute what the J4340P density would be if it weighs the same as J4340 (362g) or more
-    j4340p_entries = type_volumes.get("DM-J4340P-2EC", [])
-    if j4340p_entries:
-        vol_mm3 = j4340p_entries[0]["vol_mm3"]
         vol_m3 = vol_mm3 * 1e-9
-        print(f"\n\nDM-J4340P-2EC density estimates (volume = {vol_mm3/1000:.2f} cm³):")
-        for guess_g in [362, 375, 400, 450, 500]:
-            dens = (guess_g / 1000.0) / vol_m3
-            print(f"  If mass = {guess_g}g → effective density = {dens:.0f} kg/m³")
+        eff_density = (mass_g / 1000.0) / vol_m3 if vol_m3 > 0 else 0
+
+        print(f"  {label:<38} | {ctype:<20} | {n_solids:>6} | {vol_mm3:>14.1f} | {vol_cm3:>10.2f} | {mass_g:>8} | {eff_density:>11.0f} kg/m³")
+
+        if ctype not in type_data:
+            type_data[ctype] = []
+        type_data[ctype].append({"vol_mm3": vol_mm3, "mass_g": mass_g, "eff_density": eff_density})
+
+    print(f"\n\n{'='*90}")
+    print("Summary by component type (for material_map.json):")
+    print(f"{'='*90}")
+    print(f"\n{'Type':<22} | {'Avg Vol (cm³)':>14} | {'Mass (g)':>8} | {'Eff. Density':>14} | {'Old Density':>12}")
+    print("-" * 90)
+
+    old_densities = {
+        "DM-J4340P-2EC": 2913, "DM-J4340-2EC": 3061, "DM-J4310-2EC": 2922,
+        "6803ZZ bearing": 5500, "MGN9 Rail 150mm": 7850, "MGN9C carriage": 7850,
+    }
+
+    for ctype, entries in type_data.items():
+        avg_vol = sum(e["vol_mm3"] for e in entries) / len(entries)
+        avg_density = sum(e["eff_density"] for e in entries) / len(entries)
+        mass_g = entries[0]["mass_g"]
+        old = old_densities.get(ctype, "?")
+        print(f"  {ctype:<20} | {avg_vol/1000:>14.2f} | {mass_g:>8} | {avg_density:>11.0f} kg/m³ | {old:>9} kg/m³")
 
 
 if __name__ == "__main__":

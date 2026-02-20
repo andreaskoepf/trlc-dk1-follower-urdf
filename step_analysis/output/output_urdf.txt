@@ -4,92 +4,48 @@ Found 1 root shape(s)
 Using material map: material_map.json (15 patterns)
 Default density: 1220.0 kg/m³
 Link mapping: link_mapping.json (7 links)
-==============================================================================================================
+==========================================================================================
 
 base_link (19 solids from 2 parts):
-    DM-J4340P-2EC v5:1 (18 solids) [DM4340 motor: 3061, default: 1220.0 kg/m³]
+    DM-J4340P-2EC v5:1 (18 solids) [DM4340 motor: 3061, default: 2913 kg/m³]
     link0-1 v1:1 (1 solids)
   Volume:  156561.4 mm³  (156.56 cm³)
-  Mass:    0.4085 kg  (408.5 g)
-  CoM (m): (-0.000007, 0.023811, 0.000007)
-  Inertia (kg·m²) at CoM:
-    Ixx=1.93113e-04  Iyy=2.03478e-04  Izz=2.24150e-04
-    Ixy=9.37128e-08  Ixz=4.33929e-08  Iyz=6.36438e-08
-
-  <!-- base_link -->
-  <inertial>
-    <origin xyz="-6.9277e-06 0.0238112 7.4915e-06" rpy="0 0 0" />
-    <mass value="0.4085" />
-    <inertia ixx="1.93113e-04" ixy="9.37128e-08" ixz="4.33929e-08" iyy="2.03478e-04" iyz="6.36438e-08" izz="2.24150e-04" />
-  </inertial>
+  Mass:    0.4264 kg  (426.4 g)
 
 link1-2 (7 solids from 5 parts):
     dm-shaft-extension v1:1 (1 solids) [Aluminum: 2700 kg/m³]
     link1-2 v6:1 (1 solids)
     Link1-2 rest v2:1 (1 solids)
-    DM-J4340-2EC v5:1 (3 solids) [DM4340 motor: 3061, default: 1220.0 kg/m³]
+    DM-J4340-2EC v5:1 (3 solids) [DM4340 motor: 3061, default: 3061 kg/m³]
     dm-adapter_v0.2.0 v2:1 (1 solids) [Aluminum: 2700 kg/m³]
   Volume:  174406.7 mm³  (174.41 cm³)
-  Mass:    0.4442 kg  (444.2 g)
-  CoM (m): (0.000042, 0.018301, 0.000031)
-  Inertia (kg·m²) at CoM:
-    Ixx=1.80880e-04  Iyy=2.10698e-04  Izz=2.12989e-04
-    Ixy=2.97632e-07  Ixz=-5.69410e-08  Iyz=5.24839e-06
-
-  <!-- link1-2 -->
-  <inertial>
-    <origin xyz="4.24124e-05 0.018301 3.06415e-05" rpy="0 0 0" />
-    <mass value="0.4442" />
-    <inertia ixx="1.80880e-04" ixy="2.97632e-07" ixz="-5.69410e-08" iyy="2.10698e-04" iyz="5.24839e-06" izz="2.12989e-04" />
-  </inertial>
+  Mass:    0.4607 kg  (460.7 g)
 
 link2-3 (47 solids from 11 parts):
-    6803ZZ v1:1 (18 solids) [Bearing 6803ZZ: 5500 kg/m³]
+    6803ZZ v1:1 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
     Lager Extension v2:1 (1 solids) [Aluminum: 2700 kg/m³]
     dm-shaft-extension v1:2 (1 solids) [Aluminum: 2700 kg/m³]
     link2-3_v0.2.1 v4:1 (1 solids)
     link2-3-frame v1:1 (1 solids)
-    DM-J4340-2EC v5:2 (3 solids) [DM4340 motor: 3061, default: 1220.0 kg/m³]
+    DM-J4340-2EC v5:2 (3 solids) [DM4340 motor: 3061, default: 3061 kg/m³]
     Lager Extension v2:2 (1 solids) [Aluminum: 2700 kg/m³]
     dm-adapter_v0.2.0 v2:2 (1 solids) [Aluminum: 2700 kg/m³]
-    6803ZZ v1:2 (18 solids) [Bearing 6803ZZ: 5500 kg/m³]
+    6803ZZ v1:2 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
     dm-shaft-extension v1:3 (1 solids) [Aluminum: 2700 kg/m³]
     link2-3_v0.2.1 v4:2 (1 solids)
   Volume:  402783.7 mm³  (402.78 cm³)
-  Mass:    0.7497 kg  (749.7 g)
-  CoM (m): (-0.010373, 0.010947, -0.051393)
-  Inertia (kg·m²) at CoM:
-    Ixx=5.14379e-03  Iyy=5.20163e-03  Izz=5.10123e-04
-    Ixy=-7.20297e-05  Ixz=-5.81830e-04  Iyz=-4.11837e-04
-
-  <!-- link2-3 -->
-  <inertial>
-    <origin xyz="-0.0103732 0.010947 -0.0513933" rpy="0 0 0" />
-    <mass value="0.7497" />
-    <inertia ixx="5.14379e-03" ixy="-7.20297e-05" ixz="-5.81830e-04" iyy="5.20163e-03" iyz="-4.11837e-04" izz="5.10123e-04" />
-  </inertial>
+  Mass:    0.7689 kg  (768.9 g)
 
 link3-4 (33 solids from 7 parts):
     link3-4_v0.3_L v11:1 (1 solids)
     DM-J4310-2EC-V1.1 v4:1 (10 solids) [DM4310 motor: 2922 kg/m³]
     dm-adapter_v0.2.0 v2:3 (1 solids) [Aluminum: 2700 kg/m³]
-    6803ZZ v1:3 (18 solids) [Bearing 6803ZZ: 5500 kg/m³]
+    6803ZZ v1:3 (18 solids) [Bearing 6803ZZ: 6808 kg/m³]
     Lager Extension v2:3 (1 solids) [Aluminum: 2700 kg/m³]
     link3-4_v0.3_R v1:1 (1 solids)
     link3-4-frame_v0.3.0 v6:1 (1 solids)
   Volume:  354613.5 mm³  (354.61 cm³)
-  Mass:    0.6427 kg  (642.7 g)
-  CoM (m): (0.000055, 0.005899, -0.061309)
-  Inertia (kg·m²) at CoM:
-    Ixx=4.99560e-03  Iyy=4.84971e-03  Izz=4.01400e-04
-    Ixy=-8.17117e-07  Ixz=-2.10591e-06  Iyz=-8.04603e-04
-
-  <!-- link3-4 -->
-  <inertial>
-    <origin xyz="5.54477e-05 0.00589887 -0.0613087" rpy="0 0 0" />
-    <mass value="0.6427" />
-    <inertia ixx="4.99560e-03" ixy="-8.17117e-07" ixz="-2.10591e-06" iyy="4.84971e-03" iyz="-8.04603e-04" izz="4.01400e-04" />
-  </inertial>
+  Mass:    0.6440 kg  (644.0 g)
 
 link4-5 (12 solids from 3 parts):
     link4-5_v0.2.1 v2:1 (1 solids)
@@ -97,17 +53,6 @@ link4-5 (12 solids from 3 parts):
     joint5_cable_cover v1:1 (1 solids)
   Volume:  134812.4 mm³  (134.81 cm³)
   Mass:    0.3392 kg  (339.2 g)
-  CoM (m): (0.000071, 0.018048, 0.002185)
-  Inertia (kg·m²) at CoM:
-    Ixx=1.89475e-04  Iyy=1.89721e-04  Izz=1.64239e-04
-    Ixy=-5.94257e-07  Ixz=1.31197e-07  Iyz=2.14889e-05
-
-  <!-- link4-5 -->
-  <inertial>
-    <origin xyz="7.07364e-05 0.0180476 0.00218456" rpy="0 0 0" />
-    <mass value="0.3392" />
-    <inertia ixx="1.89475e-04" ixy="-5.94257e-07" ixz="1.31197e-07" iyy="1.89721e-04" iyz="2.14889e-05" izz="1.64239e-04" />
-  </inertial>
 
 link5-6 (14 solids from 5 parts):
     link5-6_v0.2.2 v3:1 (1 solids)
@@ -117,36 +62,14 @@ link5-6 (14 solids from 5 parts):
     dm-shaft-extension v1:5 (1 solids) [Aluminum: 2700 kg/m³]
   Volume:  136147.8 mm³  (136.15 cm³)
   Mass:    0.3520 kg  (352.0 g)
-  CoM (m): (-0.001814, 0.020530, 0.000327)
-  Inertia (kg·m²) at CoM:
-    Ixx=1.38218e-04  Iyy=1.72577e-04  Izz=1.51085e-04
-    Ixy=5.94500e-06  Ixz=1.58213e-05  Iyz=-5.83961e-06
-
-  <!-- link5-6 -->
-  <inertial>
-    <origin xyz="-0.00181385 0.0205302 0.00032718" rpy="0 0 0" />
-    <mass value="0.3520" />
-    <inertia ixx="1.38218e-04" ixy="5.94500e-06" ixz="1.58213e-05" iyy="1.72577e-04" iyz="-5.83961e-06" izz="1.51085e-04" />
-  </inertial>
 
 link6-7 (70 solids from 2 parts):
     link6-7_1_CABLE v0.2.0 v3:1 (1 solids)
-    Gripper Assembly v0.3 v4:1 (69 solids) [DM4310 motor: 2922, default: 1220.0, Stainless steel rail: 7850, Steel rack: 7850, Steel: 7850 kg/m³]
+    Gripper Assembly v0.3 v4:1 (69 solids) [DM4310 motor: 2922, default: 1220.0, Stainless steel rail: 7862, Steel rack: 7850, Steel: 7850 kg/m³]
   Volume:  288399.8 mm³  (288.40 cm³)
-  Mass:    0.6382 kg  (638.2 g)
-  CoM (m): (0.000804, 0.011157, 0.006872)
-  Inertia (kg·m²) at CoM:
-    Ixx=8.47443e-04  Iyy=7.22718e-04  Izz=5.17961e-04
-    Ixy=1.98204e-06  Ixz=2.47664e-06  Iyz=6.31377e-05
+  Mass:    0.7131 kg  (713.1 g)
 
-  <!-- link6-7 -->
-  <inertial>
-    <origin xyz="0.0008039 0.0111568 0.00687164" rpy="0 0 0" />
-    <mass value="0.6382" />
-    <inertia ixx="8.47443e-04" ixy="1.98204e-06" ixz="2.47664e-06" iyy="7.22718e-04" iyz="6.31377e-05" izz="5.17961e-04" />
-  </inertial>
-
-==============================================================================================================
+==========================================================================================
 Unmapped parts (127):
   Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 8 Steel 4.6 Plain v3:1 (1 solids)
   Hexagon Socket Head Cap Screw DIN 912 - M3 x 0.5 x 16 Steel 4.6 Plain v2:1 (1 solids)
@@ -277,15 +200,15 @@ Unmapped parts (127):
   Hexagon Socket Button Head Screw ISO 7380-1 - M3 x 6 Steel 4.6 Plain v2:95 (1 solids)
   Unmapped mass: 0.0771 kg (77.1 g)
 
-==============================================================================================================
-Total mapped mass:   3.5745 kg (3574.5 g)
+==========================================================================================
+Total mapped mass:   3.7043 kg (3704.3 g)
 
-Link            | Solids |   Mass (g) |    CoM X (m) |    CoM Y (m) |    CoM Z (m)
--------------------------------------------------------------------------------------
-  base_link     |     19 |      408.5 |    -0.000007 |     0.023811 |     0.000007
-  link1-2       |      7 |      444.2 |     0.000042 |     0.018301 |     0.000031
-  link2-3       |     47 |      749.7 |    -0.010373 |     0.010947 |    -0.051393
-  link3-4       |     33 |      642.7 |     0.000055 |     0.005899 |    -0.061309
-  link4-5       |     12 |      339.2 |     0.000071 |     0.018048 |     0.002185
-  link5-6       |     14 |      352.0 |    -0.001814 |     0.020530 |     0.000327
-  link6-7       |     70 |      638.2 |     0.000804 |     0.011157 |     0.006872
+Link            | Solids |   Mass (g)
+----------------------------------------
+  base_link     |     19 |      426.4
+  link1-2       |      7 |      460.7
+  link2-3       |     47 |      768.9
+  link3-4       |     33 |      644.0
+  link4-5       |     12 |      339.2
+  link5-6       |     14 |      352.0
+  link6-7       |     70 |      713.1

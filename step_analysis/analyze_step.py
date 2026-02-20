@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["cadquery", "numpy"]
+# dependencies = ["cadquery"]
 # ///
-"""Analyze a STEP assembly file and extract mass properties (volume, CoM, inertia)
-grouped by URDF links, suitable for URDF link definitions.
+"""Analyze a STEP assembly file and extract mass properties grouped by URDF links.
 
 Usage:
-    uv run analyze_step.py <step_file> [--density DENSITY] [--urdf] [--link-map FILE]
+    uv run analyze_step.py <step_file> [--density DENSITY] [--link-map FILE] [--material-map FILE]
 
 Density is in kg/m³ (default: 1250 for PLA). The STEP file is assumed to use mm units.
 """
@@ -15,7 +14,6 @@ Density is in kg/m³ (default: 1250 for PLA). The STEP file is assumed to use mm
 import argparse
 import json
 import sys
-import numpy as np
 
 from OCP.STEPCAFControl import STEPCAFControl_Reader
 from OCP.XCAFDoc import XCAFDoc_DocumentTool
@@ -38,41 +36,11 @@ def get_label_name(label):
     return ""
 
 
-def compute_volume_properties(solid):
-    """Compute volume-based geometric properties for a solid (density-independent).
-    Assumes STEP geometry is in mm. Returns volume in mm³, CoM in m, and
-    inertia matrix scale factor in mm⁵ (multiply by density_kg_m3 * 1e-15 for kg·m²).
-    """
+def compute_solid_volume(solid):
+    """Compute volume in mm³ for a single solid."""
     props = GProp_GProps()
     BRepGProp.VolumeProperties_s(solid, props)
-
-    volume_mm3 = props.Mass()
-    com = props.CentreOfMass()
-    com_m = np.array([com.X() * 1e-3, com.Y() * 1e-3, com.Z() * 1e-3])
-
-    mat = props.MatrixOfInertia()
-    # Raw inertia in mm⁵ (volume-weighted, not mass-weighted)
-    inertia_raw = np.array([
-        [mat.Value(1, 1), mat.Value(1, 2), mat.Value(1, 3)],
-        [mat.Value(2, 1), mat.Value(2, 2), mat.Value(2, 3)],
-        [mat.Value(3, 1), mat.Value(3, 2), mat.Value(3, 3)],
-    ])
-
-    return {"volume_mm3": volume_mm3, "com": com_m, "inertia_raw": inertia_raw}
-
-
-def apply_density(vol_props, density_kg_m3):
-    """Apply a density to volume properties to get mass properties."""
-    volume_m3 = vol_props["volume_mm3"] * 1e-9
-    mass_kg = volume_m3 * density_kg_m3
-    scale = density_kg_m3 * 1e-15
-    inertia = vol_props["inertia_raw"] * scale
-    return {
-        "mass": mass_kg,
-        "com": vol_props["com"].copy(),
-        "inertia": inertia,
-        "volume_mm3": vol_props["volume_mm3"],
-    }
+    return props.Mass()
 
 
 def get_part_density(part_key, material_patterns, default_density):
@@ -85,22 +53,25 @@ def get_part_density(part_key, material_patterns, default_density):
     return default_density, "default"
 
 
-def compute_node_solids_with_materials(node, material_patterns, default_density):
-    """Recursively compute solid properties for a node, applying per-part densities
-    based on material pattern matching at each level of the assembly tree.
+def compute_node_mass(node, material_patterns, default_density):
+    """Recursively compute mass for a node, applying per-part densities.
 
-    For leaf parts, applies density based on the part name.
-    For assemblies, recurses into children so each sub-part gets its own density.
-    Returns list of (solid_props_dict, part_name, density, material_name) tuples.
+    For assemblies, checks if the assembly name matches a material pattern.
+    If it does, that density is propagated as the default for all children.
+    Otherwise, recurses with the original default.
+    Returns list of (mass_kg, volume_mm3, part_name, density, material_name) tuples.
     """
     results = []
     name = node.get("instance_name", node["name"]) or "(unnamed)"
 
     if node["children"]:
-        # Assembly: recurse into children for per-part density
+        # Check if the assembly itself matches a material pattern;
+        # if so, propagate that density as the default for children
+        asm_density, asm_mat = get_part_density(name, material_patterns, default_density)
+        child_default = asm_density if asm_mat != "default" else default_density
         for child in node["children"]:
-            results.extend(compute_node_solids_with_materials(
-                child, material_patterns, default_density))
+            results.extend(compute_node_mass(
+                child, material_patterns, child_default))
     else:
         # Leaf part: apply density based on name
         shape = node["shape"]
@@ -108,48 +79,25 @@ def compute_node_solids_with_materials(node, material_patterns, default_density)
             part_density, mat_name = get_part_density(name, material_patterns, default_density)
             solids = extract_solids_from_shape(shape)
             for solid in solids:
-                vol_props = compute_volume_properties(solid)
-                solid_props = apply_density(vol_props, part_density)
-                results.append((solid_props, name, part_density, mat_name))
+                vol_mm3 = compute_solid_volume(solid)
+                mass_kg = vol_mm3 * 1e-9 * part_density
+                results.append((mass_kg, vol_mm3, name, part_density, mat_name))
 
     return results
 
 
-def combine_properties(solids_data):
-    """Combine mass properties from multiple solids using parallel axis theorem."""
-    if not solids_data:
+def combine_mass(parts_data):
+    """Combine mass data from multiple parts."""
+    if not parts_data:
         return None
-
-    total_mass = sum(s["mass"] for s in solids_data)
-    if total_mass < 1e-12:
-        return None
-
-    combined_com = np.zeros(3)
-    for s in solids_data:
-        combined_com += s["mass"] * s["com"]
-    combined_com /= total_mass
-
-    combined_inertia = np.zeros((3, 3))
-    for s in solids_data:
-        d = s["com"] - combined_com
-        combined_inertia += s["inertia"] + s["mass"] * (
-            np.dot(d, d) * np.eye(3) - np.outer(d, d)
-        )
-
-    total_volume_mm3 = sum(s["volume_mm3"] for s in solids_data)
-
+    total_mass = sum(p[0] for p in parts_data)
+    total_vol = sum(p[1] for p in parts_data)
     return {
-        "volume_mm3": total_volume_mm3,
-        "volume_m3": total_volume_mm3 * 1e-9,
+        "volume_mm3": total_vol,
+        "volume_cm3": total_vol / 1000.0,
         "mass_kg": total_mass,
-        "com_m": tuple(combined_com),
-        "ixx": combined_inertia[0, 0],
-        "iyy": combined_inertia[1, 1],
-        "izz": combined_inertia[2, 2],
-        "ixy": combined_inertia[0, 1],
-        "ixz": combined_inertia[0, 2],
-        "iyz": combined_inertia[1, 2],
-        "num_solids": len(solids_data),
+        "mass_g": total_mass * 1000.0,
+        "num_solids": len(parts_data),
     }
 
 
@@ -166,23 +114,6 @@ def extract_solids_from_shape(shape):
 def count_solids(shape):
     """Count number of solids in a shape."""
     return len(extract_solids_from_shape(shape))
-
-
-def format_urdf_inertial(props, name=""):
-    """Format mass properties as a URDF <inertial> element."""
-    com = props["com_m"]
-    lines = []
-    lines.append(f"  <!-- {name} -->" if name else "  <!-- link -->")
-    lines.append(f"  <inertial>")
-    lines.append(f'    <origin xyz="{com[0]:.6g} {com[1]:.6g} {com[2]:.6g}" rpy="0 0 0" />')
-    lines.append(f'    <mass value="{props["mass_kg"]:.4f}" />')
-    lines.append(
-        f'    <inertia ixx="{props["ixx"]:.5e}" ixy="{props["ixy"]:.5e}" '
-        f'ixz="{props["ixz"]:.5e}" iyy="{props["iyy"]:.5e}" '
-        f'iyz="{props["iyz"]:.5e}" izz="{props["izz"]:.5e}" />'
-    )
-    lines.append(f"  </inertial>")
-    return "\n".join(lines)
 
 
 def walk_assembly(shape_tool, label, depth=0):
@@ -241,7 +172,6 @@ def collect_depth1_parts(tree):
     for child in tree["children"]:
         instance_name = child.get("instance_name", "")
         name = child["name"] or "(unnamed)"
-        # The instance name is the unique identifier (e.g. "link1-2 v6:1")
         key = instance_name if instance_name else name
         parts.append({"key": key, "name": name, "node": child})
     return parts
@@ -252,8 +182,6 @@ def main():
     parser.add_argument("step_file", help="Path to the STEP file")
     parser.add_argument("--density", type=float, default=1250.0,
                         help="Material density in kg/m³ (default: 1250 for PLA)")
-    parser.add_argument("--urdf", action="store_true",
-                        help="Output URDF <inertial> snippets")
     parser.add_argument("--tree", action="store_true",
                         help="Print the full assembly tree")
     parser.add_argument("--link-map", type=str, default=None,
@@ -318,7 +246,6 @@ def main():
             # Load link mapping and compute grouped properties
             with open(args.link_map) as f:
                 link_map = json.load(f)
-            # Remove comment keys
             link_map = {k: v for k, v in link_map.items() if not k.startswith("_")}
 
             if material_patterns:
@@ -327,14 +254,14 @@ def main():
             else:
                 print(f"\nUsing uniform density: {args.density} kg/m³")
             print(f"Link mapping: {args.link_map} ({len(link_map)} links)")
-            print("=" * 110)
+            print("=" * 90)
 
             mapped_keys = set()
             total_mass = 0.0
             all_link_props = []
 
             for link_name, part_keys in link_map.items():
-                link_solids_data = []
+                link_parts_data = []
                 part_names_found = []
 
                 for pk in part_keys:
@@ -345,13 +272,11 @@ def main():
                     node = part_lookup[pk]
 
                     if material_patterns:
-                        # Recurse into sub-assemblies for per-part density
-                        part_results = compute_node_solids_with_materials(
+                        part_results = compute_node_mass(
                             node, material_patterns, args.density)
-                        # Collect unique materials used
                         materials_used = {}
-                        for sp, pn, dens, mn in part_results:
-                            link_solids_data.append(sp)
+                        for mass_kg, vol_mm3, pn, dens, mn in part_results:
+                            link_parts_data.append((mass_kg, vol_mm3, pn, dens, mn))
                             if mn not in materials_used:
                                 materials_used[mn] = dens
                         mat_strs = [f"{mn}: {d}" for mn, d in materials_used.items()]
@@ -363,12 +288,12 @@ def main():
                             continue
                         solids = extract_solids_from_shape(shape)
                         for solid in solids:
-                            vol_props = compute_volume_properties(solid)
-                            solid_props = apply_density(vol_props, args.density)
-                            link_solids_data.append(solid_props)
+                            vol_mm3 = compute_solid_volume(solid)
+                            mass_kg = vol_mm3 * 1e-9 * args.density
+                            link_parts_data.append((mass_kg, vol_mm3, pk, args.density, "default"))
                         part_names_found.append(f"{pk} ({len(solids)} solids)")
 
-                props = combine_properties(link_solids_data)
+                props = combine_mass(link_parts_data)
                 if props is None:
                     print(f"\n{link_name}: no valid solids")
                     continue
@@ -376,26 +301,17 @@ def main():
                 total_mass += props["mass_kg"]
                 all_link_props.append((link_name, props))
 
-                com = props["com_m"]
                 print(f"\n{link_name} ({props['num_solids']} solids from {len(part_names_found)} parts):")
                 for pn in part_names_found:
                     print(f"    {pn}")
-                print(f"  Volume:  {props['volume_mm3']:.1f} mm³  ({props['volume_m3']*1e6:.2f} cm³)")
-                print(f"  Mass:    {props['mass_kg']:.4f} kg  ({props['mass_kg']*1000:.1f} g)")
-                print(f"  CoM (m): ({com[0]:.6f}, {com[1]:.6f}, {com[2]:.6f})")
-                print(f"  Inertia (kg·m²) at CoM:")
-                print(f"    Ixx={props['ixx']:.5e}  Iyy={props['iyy']:.5e}  Izz={props['izz']:.5e}")
-                print(f"    Ixy={props['ixy']:.5e}  Ixz={props['ixz']:.5e}  Iyz={props['iyz']:.5e}")
-
-                if args.urdf:
-                    print()
-                    print(format_urdf_inertial(props, link_name))
+                print(f"  Volume:  {props['volume_mm3']:.1f} mm³  ({props['volume_cm3']:.2f} cm³)")
+                print(f"  Mass:    {props['mass_kg']:.4f} kg  ({props['mass_g']:.1f} g)")
 
             # Show unmapped parts
             unmapped = [p for p in depth1_parts if p["key"] not in mapped_keys]
             if unmapped:
                 unmapped_mass = 0.0
-                print(f"\n{'='*110}")
+                print(f"\n{'='*90}")
                 print(f"Unmapped parts ({len(unmapped)}):")
                 for p in unmapped:
                     shape = p["node"]["shape"]
@@ -403,22 +319,20 @@ def main():
                         part_density, _ = get_part_density(p["key"], material_patterns, args.density)
                         solids = extract_solids_from_shape(shape)
                         for solid in solids:
-                            vol_props = compute_volume_properties(solid)
-                            sp = apply_density(vol_props, part_density)
-                            unmapped_mass += sp["mass"]
+                            vol_mm3 = compute_solid_volume(solid)
+                            unmapped_mass += vol_mm3 * 1e-9 * part_density
                     n = p["node"]["num_solids"]
                     print(f"  {p['key']:<60} ({n} solids)")
                 print(f"  Unmapped mass: {unmapped_mass:.4f} kg ({unmapped_mass*1000:.1f} g)")
 
-            print(f"\n{'='*110}")
+            print(f"\n{'='*90}")
             print(f"Total mapped mass:   {total_mass:.4f} kg ({total_mass*1000:.1f} g)")
 
             # Summary table
-            print(f"\n{'Link':<15} | {'Solids':>6} | {'Mass (g)':>10} | {'CoM X (m)':>12} | {'CoM Y (m)':>12} | {'CoM Z (m)':>12}")
-            print("-" * 85)
+            print(f"\n{'Link':<15} | {'Solids':>6} | {'Mass (g)':>10}")
+            print("-" * 40)
             for name, props in all_link_props:
-                com = props["com_m"]
-                print(f"  {name:<13} | {props['num_solids']:>6} | {props['mass_kg']*1000:>10.1f} | {com[0]:>12.6f} | {com[1]:>12.6f} | {com[2]:>12.6f}")
+                print(f"  {name:<13} | {props['num_solids']:>6} | {props['mass_g']:>10.1f}")
 
         else:
             # No link map: show per-part properties
@@ -428,11 +342,9 @@ def main():
             else:
                 print(f"\nUsing uniform density: {args.density} kg/m³")
             print(f"Found {len(depth1_parts)} depth-1 parts")
-            print("=" * 110)
+            print("=" * 90)
 
             total_mass = 0.0
-            all_props = []
-
             for p in depth1_parts:
                 name = p["key"]
                 shape = p["node"]["shape"]
@@ -441,28 +353,15 @@ def main():
 
                 part_density, mat_name = get_part_density(name, material_patterns, args.density)
                 solids = extract_solids_from_shape(shape)
-                solids_data = [apply_density(compute_volume_properties(s), part_density) for s in solids]
-                props = combine_properties(solids_data)
-                if props is None:
-                    continue
+                part_vol = sum(compute_solid_volume(s) for s in solids)
+                part_mass = part_vol * 1e-9 * part_density
 
-                total_mass += props["mass_kg"]
-                all_props.append((name, props))
+                total_mass += part_mass
+                print(f"\n{name} ({len(solids)} solids):")
+                print(f"  Volume:  {part_vol:.1f} mm³  ({part_vol/1000:.2f} cm³)")
+                print(f"  Mass:    {part_mass:.4f} kg  ({part_mass*1000:.1f} g)")
 
-                com = props["com_m"]
-                print(f"\n{name} ({props['num_solids']} solids):")
-                print(f"  Volume:  {props['volume_mm3']:.1f} mm³  ({props['volume_m3']*1e6:.2f} cm³)")
-                print(f"  Mass:    {props['mass_kg']:.4f} kg  ({props['mass_kg']*1000:.1f} g)")
-                print(f"  CoM (m): ({com[0]:.6f}, {com[1]:.6f}, {com[2]:.6f})")
-                print(f"  Inertia (kg·m²) at CoM:")
-                print(f"    Ixx={props['ixx']:.5e}  Iyy={props['iyy']:.5e}  Izz={props['izz']:.5e}")
-                print(f"    Ixy={props['ixy']:.5e}  Ixz={props['ixz']:.5e}  Iyz={props['iyz']:.5e}")
-
-                if args.urdf:
-                    print()
-                    print(format_urdf_inertial(props, name))
-
-            print(f"\n{'='*110}")
+            print(f"\n{'='*90}")
             print(f"Total mass: {total_mass:.4f} kg ({total_mass*1000:.1f} g)")
 
 
