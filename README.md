@@ -1,5 +1,12 @@
 # TRLC-DK1-Follower URDF
 
+> **This repository has been archived.** The URDF and related files have been merged into the official DK1 repository:
+> **[github.com/robot-learning-co/trlc-dk1](https://github.com/robot-learning-co/trlc-dk1)**
+>
+> Please refer to that repository for the latest version of the URDF and all future updates.
+
+---
+
 ![Visual 3D Model of TRLC-DK1-Follower](https://github.com/andreaskoepf/trlc-dk1-follower-urdf/raw/main/assets/dk1_vsual_right.png)
 
 This repository contains the URDF (Unified Robot Description Format) model of the **DK-1 Follower arm** developed by [The Robot Learning Company (TRLC)](https://www.robot-learning.co/), a German robotics startup based in Munich.
